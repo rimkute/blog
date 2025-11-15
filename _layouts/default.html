@@ -15,7 +15,8 @@
   {% endif %}
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
 </head>
-<body>
+
+  <body>
   <div class="site-wrapper">
     <header class="site-header">
       <a href="{{ "/" | relative_url }}" class="site-name">{{ site.title }}</a>
@@ -24,9 +25,24 @@
       </nav>
     </header>
 
-    <main class="site-content">
-      {{ content }}
-    </main>
+    <div class="layout">
+      <main class="site-content">
+        {{ content }}
+      </main>
+
+      <aside class="sidebar">
+        <h2 class="sidebar-title">Essays</h2>
+        <ul class="sidebar-list">
+          {% for post in site.posts %}
+            <li class="sidebar-item">
+              <a href="{{ post.url | relative_url }}" class="sidebar-link">
+                {{ post.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </aside>
+    </div>
 
     <footer class="site-footer">
       <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
