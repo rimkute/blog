@@ -10,43 +10,36 @@
     {% endif %}
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% if site.description %}
-  <meta name="description" content="{{ site.description }}">
-  {% endif %}
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
 </head>
 
-  <body>
-  <div class="site-wrapper">
-    <header class="site-header">
-      <a href="{{ "/" | relative_url }}" class="site-name">{{ site.title }}</a>
-      <nav class="site-nav">
-        <a href="{{ "/about/" | relative_url }}">About</a>
-      </nav>
-    </header>
+<body>
+  <div class="layout-2col">
 
-    <div class="layout">
-      <main class="site-content">
-        {{ content }}
-      </main>
+    <!-- LEFT COLUMN -->
+    <aside class="left-menu">
+      <div class="left-title">{{ site.title }} /</div>
 
-      <aside class="sidebar">
-        <h2 class="sidebar-title">Essays</h2>
-        <ul class="sidebar-list">
-          {% for post in site.posts %}
-            <li class="sidebar-item">
-              <a href="{{ post.url | relative_url }}" class="sidebar-link">
-                {{ post.title }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </aside>
-    </div>
+      <ul class="left-list">
+        <li class="left-item">
+          <a href="/about/" class="left-link">-> ABOUT</a>
+        </li>
 
-    <footer class="site-footer">
-      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
-    </footer>
+        {% for post in site.posts %}
+        <li class="left-item">
+          <a href="{{ post.url | relative_url }}" class="left-link">
+            {{ post.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <!-- RIGHT COLUMN -->
+    <main class="right-content">
+      {{ content }}
+    </main>
+
   </div>
 </body>
 </html>
