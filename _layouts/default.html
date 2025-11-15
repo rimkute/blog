@@ -10,7 +10,9 @@
     {% endif %}
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ site.description }}">
+
+  <!-- Font + CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
 </head>
 
@@ -18,37 +20,36 @@
   <div class="site-wrapper">
 
     <header class="site-header">
-      <a href="{{ "/" | relative_url }}" class="site-name">Tarun Bhatt /</a>
+      <a href="{{ "/" | relative_url }}" class="site-name">{{ site.title }} /</a>
     </header>
 
     <div class="layout">
 
       <aside class="sidebar">
-
         <nav class="menu">
 
-          <a class="menu-item {% if page.url == "/about/" %}active{% endif %}"
-             href="{{ "/about/" | relative_url }}">
+          <!-- ABOUT -->
+          <a href="{{ "/about/" | relative_url }}"
+             class="menu-item {% if page.url == "/about/" %}active{% endif %}">
             <span class="arrow">→</span> ABOUT
           </a>
 
+          <!-- POSTS -->
           {% for post in site.posts %}
-            <a class="menu-item {% if page.url == post.url %}active{% endif %}"
-               href="{{ post.url | relative_url }}">
+            <a href="{{ post.url | relative_url }}"
+               class="menu-item {% if page.url == post.url %}active{% endif %}">
               <span class="arrow">→</span> {{ post.title | upcase }}
             </a>
           {% endfor %}
 
         </nav>
-
       </aside>
 
-      <main class="content">
+      <main class="site-content">
         {{ content }}
       </main>
 
     </div>
-
   </div>
 </body>
 </html>
