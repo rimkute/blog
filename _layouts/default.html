@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>
@@ -11,62 +10,47 @@
     {% endif %}
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
   {% if site.description %}
   <meta name="description" content="{{ site.description }}">
   {% endif %}
-  
-  <!-- Link to the main CSS file -->
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 </head>
 
 <body>
   <div class="site-wrapper">
-
-    <!-- Removed the entire Header Section -->
-    <!-- <header class="site-header">
+    <header class="site-header">
+      <a href="{{ "/" | relative_url }}" class="site-name">{{ site.title }}</a>
       <nav class="site-nav">
-        <a href="{{ "/" | relative_url }}">Home</a>
         <a href="{{ "/about/" | relative_url }}">About</a>
       </nav>
-    </header> -->
+    </header>
 
     <div class="layout">
-      <!-- Sidebar Section with "Tarun Bhatt" -->
       <aside class="sidebar">
         <div class="site-title">
           <a href="{{ '/' | relative_url }}">Tarun Bhatt</a>
-          <span class="slash">/</span>
         </div>
 
         <nav class="sidebar-nav">
           <ul>
-            <li class="{% if page.url == '/about/' %}active{% endif %}">
-              <a href="{{ '/about/' | relative_url }}">About</a>
+            <li class="{% if page.url == '/' %}active{% endif %}">
+              <a href="{{ '/' | relative_url }}">About</a>
             </li>
 
             {% assign sorted_posts = site.posts | sort: "date" | reverse %}
             {% for post in sorted_posts %}
-            <li class="{% if page.url == post.url %}active{% endif %}">
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            </li>
+              <li class="{% if page.url == post.url %}active{% endif %}">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </li>
             {% endfor %}
           </ul>
         </nav>
       </aside>
 
-      <!-- Main Content Area -->
       <main class="site-content">
         {{ content }}
       </main>
     </div>
-
-    <!-- Footer Section -->
-    <footer class="site-footer">
-      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
-    </footer>
-
   </div>
 </body>
-
 </html>
