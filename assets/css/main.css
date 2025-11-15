@@ -8,17 +8,18 @@ html, body {
   line-height: 1.5;
 }
 
-/* 2-COLUMN LAYOUT */
+/* TWO COLUMN LAYOUT */
 .layout-2col {
   display: flex;
   min-height: 100vh;
 }
 
-/* LEFT MENU */
+/* LEFT MENU COLUMN */
 .left-menu {
   width: 32%;
   padding: 2rem 1.5rem;
   border-right: 1px solid #d6d2c4;
+  box-sizing: border-box;
 }
 
 .left-title {
@@ -43,34 +44,78 @@ html, body {
 .left-link {
   text-decoration: none;
   color: #3a3a3a;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-block;
 }
 
 .left-link:hover {
   color: #111;
 }
 
-/* RIGHT CONTENT */
+.left-link-active {
+  font-weight: 600;
+}
+
+/* RIGHT CONTENT COLUMN */
 .right-content {
   width: 68%;
   padding: 3rem 3rem 5rem 3rem;
+  box-sizing: border-box;
 }
 
 .right-content h1 {
   font-size: 2rem;
+  margin-top: 0;
   margin-bottom: 1.2rem;
+}
+
+.right-content h2 {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .right-content p {
   margin-bottom: 1rem;
 }
 
-/* LINKS */
-a {
-  color: #0645AD;
+/* LINKS IN CONTENT */
+.right-content a {
+  color: #0645ad;
+  text-decoration: none;
 }
 
-a:hover {
+.right-content a:hover {
   text-decoration: underline;
+}
+
+/* SIMPLE TYPOGRAPHY REFINEMENTS */
+.right-content ul,
+.right-content ol {
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+}
+
+.right-content li {
+  margin-bottom: 0.25rem;
+}
+
+/* MOBILE: STACK COLUMNS */
+@media (max-width: 900px) {
+  .layout-2col {
+    flex-direction: column;
+  }
+
+  .left-menu {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #d6d2c4;
+  }
+
+  .right-content {
+    width: 100%;
+    padding: 2rem 1.5rem 3rem 1.5rem;
+  }
 }
