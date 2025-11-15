@@ -23,14 +23,19 @@
 <body>
   <div class="site-wrapper">
 
-    <!-- Header Section without any links or titles -->
+    <!-- Header Section without Tarun Bhatt -->
     <header class="site-header">
       <a href="{{ "/" | relative_url }}" class="site-name">{{ site.title }}</a>
     </header>
 
     <div class="layout">
-      <!-- Sidebar Section -->
+      <!-- Sidebar Section with Tarun Bhatt -->
       <aside class="sidebar">
+        <div class="site-title">
+          <a href="{{ '/' | relative_url }}">Tarun Bhatt</a>
+          <span class="slash">/</span>
+        </div>
+
         <nav class="sidebar-nav">
           <ul>
             <li class="{% if page.url == '/about/' %}active{% endif %}">
