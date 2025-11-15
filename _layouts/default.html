@@ -1,52 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} • {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  </head>
 
-  <title>{{ page.title }}</title>
+  <body>
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <div class="layout">
 
-  <!-- Correct CSS path -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-</head>
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h1 class="site-title">
+          <a href="{{ "/" | relative_url }}">Tarun Bhatt</a>
+          <span class="slash">/</span>
+        </h1>
 
-<body>
+        <nav class="sidebar-nav">
+          <ul>
+            <!-- ABOUT -->
+            <li class="{% if page.url == '/about/' %}active{% endif %}">
+              <a href="{{ '/about/' | relative_url }}">ABOUT</a>
+            </li>
 
-  <div class="wrapper">
+            <!-- LOOP ALL POSTS -->
+            {% assign sorted_posts = site.posts | sort: 'title' %}
+            {% for post in sorted_posts %}
+              <li class="{% if page.url == post.url %}active{% endif %}">
+                <a href="{{ post.url | relative_url }}">{{ post.title | upcase }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </aside>
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-      <a href="{{ '/' | relative_url }}" class="site-title">
-        Tarun Bhatt&nbsp;&nbsp;/
-      </a>
+      <!-- MAIN CONTENT -->
+      <main class="content">
+        <h2 class="page-title">{{ page.title }}</h2>
 
-      <ul>
-        <li class="{% if page.url == '/about/' %}active{% endif %}">
-          <a href="{{ '/about/' | relative_url }}">ABOUT</a>
-        </li>
+        <div class="page-content">
+          {{ content }}
+        </div>
+      </main>
 
-        <li class="{% if page.url contains '/machine-learning' %}active{% endif %}">
-          <a href="{{ '/machine-learning/' | relative_url }}">MACHINE LEARNING</a>
-        </li>
+    </div>
 
-        <li class="{% if page.url contains '/neural-nets' %}active{% endif %}">
-          <a href="{{ '/neural-nets/' | relative_url }}">NEURAL NETS</a>
-        </li>
-      </ul>
-    </aside>
-
-    <!-- MAIN CONTENT -->
-    <main class="content">
-      <h1>{{ page.title }}</h1>
-      {{ content }}
-    </main>
-
-  </div>
-
-</body>
+  </body>
 </html>
