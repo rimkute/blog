@@ -29,6 +29,7 @@ ul {
   flex-direction: row;  /* Two-column layout */
   margin: 20px;
   gap: 20px;
+  flex-wrap: wrap;  /* Allow layout to wrap for smaller screens */
 }
 
 .site-wrapper {
@@ -44,10 +45,122 @@ ul {
   border-right: 1px solid #cfc4b4;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* Prevent shrinking of sidebar */
 }
 
 .site-title a {
-  font-size: 32px; /* Adjust size as needed */
-  font-weight: 700; /* Bold font */
-  color: #333; /* Adjust color as needed */
-  letter-spacing: 0.5p
+  font-size: 24px; /* Adjusted size */
+  font-weight: 400; /* Normal weight */
+  color: #333; /* Adjust color */
+  letter-spacing: 0.5px; /* Optional, for spacing */
+  margin-bottom: 20px;
+  display: block;
+}
+
+.site-title .slash {
+  font-size: 24px; /* Same size as the title */
+  color: #888; /* Lighter color for the slash */
+  margin-left: 10px;
+}
+
+.site-title a.active {
+  font-weight: 400; /* Normal weight for active state */
+  color: #333; /* Color remains the same */
+}
+
+.sidebar-nav ul {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-nav a {
+  padding: 12px 10px;
+  display: block;
+  border-bottom: 1px solid #d8cfc2;
+  font-size: 16px; /* Adjusted font size for sidebar links */
+  font-weight: 400; /* Normal weight */
+  color: #3a3a3a;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+  background: #efe6db;
+}
+
+.sidebar-nav li.active a {
+  background: #e9dfd3;
+  font-weight: 700;
+  border-left: 4px solid #b8a898;
+  padding-left: 12px;
+}
+
+/* Main Content Styles */
+.site-content {
+  flex: 1;
+  padding: 20px;
+  background-color: transparent;  /* Ensure no background for main content */
+  box-shadow: none; /* Remove any shadow */
+}
+
+.page-title {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.page-content {
+  background-color: transparent;  /* Remove white background */
+  font-size: 19px;
+  max-width: 800px;
+}
+
+.page-content p {
+  margin-bottom: 20px;
+}
+
+/* Post Styles */
+.post-title {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.post-content {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.post-content p {
+  margin-bottom: 22px;
+}
+
+/* Footer Styles */
+.site-footer {
+  background: #f5eee4;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;  /* Stack sidebar and content */
+    padding: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #cfc4b4;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .sidebar-nav a {
+    border-bottom: 1px solid #cfc4b4;
+  }
+}
