@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Main stylesheet -->
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/main.css?v=3" | relative_url }}">
 
   <!-- Roboto Condensed font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
@@ -28,14 +28,14 @@
       </div>
 
       <ul class="sidebar-list">
-        <!-- ABOUT: displays on every page, never gets an arrow -->
+        <!-- ABOUT: always visible, never gets arrow -->
         <li class="sidebar-item">
           <a href="{{ "/about/" | relative_url }}" class="sidebar-link">ABOUT</a>
         </li>
 
-        <!-- POSTS: only active post gets the arrow -->
+        <!-- POSTS: arrow only on the post whose title matches page.title -->
         {% for post in site.posts %}
-          {% assign is_current = (post.id == page.id) %}
+          {% assign is_current = (page.title == post.title) %}
           <li class="sidebar-item{% if is_current %} active{% endif %}">
             <a href="{{ post.url | relative_url }}" class="sidebar-link">
               {{ post.title }}
