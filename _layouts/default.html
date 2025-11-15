@@ -23,13 +23,16 @@
 <body>
   <div class="site-wrapper">
 
-    <!-- Header Section -->
+    <!-- Header Section without the title -->
     <header class="site-header">
-      <a href="{{ "/" | relative_url }}" class="site-name">{{ site.title }}</a>
+      <nav class="site-nav">
+        <a href="{{ "/" | relative_url }}">Home</a>
+        <a href="{{ "/about/" | relative_url }}">About</a>
+      </nav>
     </header>
 
     <div class="layout">
-      <!-- Sidebar Section -->
+      <!-- Sidebar Section with the site title -->
       <aside class="sidebar">
         <div class="site-title">
           <a href="{{ '/' | relative_url }}">Tarun Bhatt</a>
@@ -38,12 +41,10 @@
 
         <nav class="sidebar-nav">
           <ul>
-            <!-- About link: active only when on the About page -->
             <li class="{% if page.url == '/about/' %}active{% endif %}">
               <a href="{{ '/about/' | relative_url }}">About</a>
             </li>
 
-            <!-- Loop through posts and display them in sidebar -->
             {% assign sorted_posts = site.posts | sort: "date" | reverse %}
             {% for post in sorted_posts %}
             <li class="{% if page.url == post.url %}active{% endif %}">
