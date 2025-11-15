@@ -3,45 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/assets/main.css">
+
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Correct CSS path -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 
 <body>
 
-<div class="container">
+  <div class="wrapper">
 
-  <!-- LEFT SIDEBAR -->
-  <aside class="sidebar">
-      <a href="/" class="site-title">Tarun Bhatt  /</a>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <a href="{{ '/' | relative_url }}" class="site-title">
+        Tarun Bhatt&nbsp;&nbsp;/
+      </a>
 
-      <nav class="nav">
-        <ul>
-          <li class="{% if page.url == '/about/' %}active{% endif %}">
-            <a href="/about/">ABOUT</a>
-          </li>
+      <ul>
+        <li class="{% if page.url == '/about/' %}active{% endif %}">
+          <a href="{{ '/about/' | relative_url }}">ABOUT</a>
+        </li>
 
-          <li class="{% if page.url contains '/machine-learning' %}active{% endif %}">
-            <a href="/machine-learning/">MACHINE LEARNING</a>
-          </li>
+        <li class="{% if page.url contains '/machine-learning' %}active{% endif %}">
+          <a href="{{ '/machine-learning/' | relative_url }}">MACHINE LEARNING</a>
+        </li>
 
-          <li class="{% if page.url contains '/neural-nets' %}active{% endif %}">
-            <a href="/neural-nets/">NEURAL NETS</a>
-          </li>
-        </ul>
-      </nav>
-  </aside>
+        <li class="{% if page.url contains '/neural-nets' %}active{% endif %}">
+          <a href="{{ '/neural-nets/' | relative_url }}">NEURAL NETS</a>
+        </li>
+      </ul>
+    </aside>
 
-  <!-- MAIN CONTENT -->
-  <main class="content">
+    <!-- MAIN CONTENT -->
+    <main class="content">
       <h1>{{ page.title }}</h1>
       {{ content }}
-  </main>
+    </main>
 
-</div>
+  </div>
 
 </body>
 </html>
