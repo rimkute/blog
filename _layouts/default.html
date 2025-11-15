@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} • Tarun Bhatt</title>
-  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
@@ -21,14 +21,17 @@
 
       <nav class="sidebar-nav">
         <ul>
+          <!-- ABOUT Page -->
           <li class="{% if page.url == '/' %}active{% endif %}">
             <a href="{{ '/' | relative_url }}">About</a>
           </li>
 
-          {% for post in site.posts %}
-          <li class="{% if page.url == post.url %}active{% endif %}">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          </li>
+          <!-- Sorted Posts -->
+          {% assign sorted_posts = site.posts | sort: "date" | reverse %}
+          {% for post in sorted_posts %}
+            <li class="{% if page.url == post.url %}active{% endif %}">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </li>
           {% endfor %}
         </ul>
       </nav>
