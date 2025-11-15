@@ -6,9 +6,9 @@
 }
 
 html, body {
-  font-family: "Roboto", sans-serif;  /* Updated to match RKG font */
-  background: #f5eee4; /* Background color */
-  color: #333333;  /* Updated text color to match RKG */
+  font-family: "Roboto", sans-serif;
+  background: #f9f7ec;  /* Lighter shade of #f5eee4 */
+  color: #2d2d2d;
   height: 100%;
   line-height: 1.6;
 }
