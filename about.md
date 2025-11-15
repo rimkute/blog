@@ -5,6 +5,6 @@ title: "About"
 
 I work on AI/ML, business operations, and manufacturing innovation.
 
-Write about the site.
+Write about on this site.
 
-Email: hello@belmanco.us
+Email: your@email.com
