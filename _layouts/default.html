@@ -26,13 +26,25 @@
     <!-- Header Section -->
     <header class="site-header">
       <a href="{{ "/" | relative_url }}" class="site-name">{{ site.title }}</a>
+      <nav class="site-nav">
+        <a href="{{ "/about/" | relative_url }}">About</a>
+      </nav>
     </header>
 
     <div class="layout">
       <!-- Sidebar Section -->
       <aside class="sidebar">
+        <div class="site-title">
+          <a href="{{ '/' | relative_url }}">Tarun Bhatt</a>
+          <span class="slash">/</span>
+        </div>
+
         <nav class="sidebar-nav">
           <ul>
+            <li class="{% if page.url == '/' %}active{% endif %}">
+              <a href="{{ '/' | relative_url }}">About</a>
+            </li>
+
             {% assign sorted_posts = site.posts | sort: "date" | reverse %}
             {% for post in sorted_posts %}
             <li class="{% if page.url == post.url %}active{% endif %}">
