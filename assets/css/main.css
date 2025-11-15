@@ -1,9 +1,9 @@
-/* GLOBAL: serif body like RKG */
+/* GLOBAL — Serif body like RKG */
 html, body {
   margin: 0;
   padding: 0;
   font-family: Georgia, "Times New Roman", serif;
-  background: #f8f4e9;        /* warm off-white */
+  background: #f8f4e9;
   color: #333;
   line-height: 1.6;
 }
@@ -22,18 +22,17 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Site title in left column (Ravi Gupta /) */
+/* Site title (Ravi Gupta /) */
 .left-title {
   font-family: "Roboto Condensed", Arial, sans-serif;
   font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: 0.06em;
-  text-transform: none;
-  margin-bottom: 1.6rem;
   color: #222;
+  margin-bottom: 1.6rem;
 }
 
-/* List of posts in left column */
+/* Post list */
 .left-list {
   list-style: none;
   padding: 0;
@@ -46,7 +45,7 @@ html, body {
   border-bottom: 1px solid #d4cbb8;
 }
 
-/* Left menu links: condensed all caps like RKG */
+/* Menu links — all caps, condensed, spaced */
 .left-link {
   font-family: "Roboto Condensed", Arial, sans-serif;
   text-decoration: none;
@@ -54,85 +53,4 @@ html, body {
   font-size: 0.9rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  display: inline-block;
-}
-
-.left-link:hover {
-  color: #222;
-}
-
-.left-link-active {
-  font-weight: 600;
-  color: #222;
-}
-
-/* RIGHT CONTENT COLUMN */
-.right-content {
-  width: 68%;
-  padding: 3rem 3rem 4rem 3rem;
-  box-sizing: border-box;
-}
-
-/* Headings on the right: tall, clean sans similar to RKG */
-.right-content h1,
-.right-content h2,
-.right-content h3 {
-  font-family: "Roboto Condensed", Arial, sans-serif;
-  letter-spacing: 0.04em;
-}
-
-.right-content h1 {
-  font-size: 2rem;
-  margin-top: 0;
-  margin-bottom: 1.2rem;
-}
-
-.right-content h2 {
-  font-size: 1.3rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-
-/* Body text stays serif */
-.right-content p {
-  margin-bottom: 1rem;
-}
-
-/* Links in content */
-.right-content a {
-  color: #0645ad;
-  text-decoration: none;
-}
-
-.right-content a:hover {
-  text-decoration: underline;
-}
-
-/* Lists in content */
-.right-content ul,
-.right-content ol {
-  margin: 0 0 1rem 1.25rem;
-  padding: 0;
-}
-
-.right-content li {
-  margin-bottom: 0.25rem;
-}
-
-/* MOBILE: STACK COLUMNS */
-@media (max-width: 900px) {
-  .layout-2col {
-    flex-direction: column;
-  }
-
-  .left-menu {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #d4cbb8;
-  }
-
-  .right-content {
-    width: 100%;
-    padding: 2rem 1.5rem 3rem 1.5rem;
-  }
-}
+  display: inline-b
