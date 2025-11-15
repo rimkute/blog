@@ -8,46 +8,77 @@ html, body {
   font-family: "Roboto Condensed", sans-serif;
   line-height: 1.6;
   color: #2A2A2A;
-  background: #f5eee4; /* your chosen background */
+  background: #f5eee4;  /* your chosen background */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .site-wrapper {
-  display: flex;
   max-width: 1100px;
   margin: 0 auto;
   padding: 40px 40px 80px 40px;
 }
 
 /* ----------------------------------------
-   SIDEBAR
+   HEADER
 ---------------------------------------- */
 
+.site-header {
+  margin-bottom: 24px;
+}
+
+.site-name {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: #2A2A2A;
+}
+
+.site-name:hover {
+  text-decoration: none;
+}
+
+/* ----------------------------------------
+   LAYOUT
+---------------------------------------- */
+
+.layout {
+  display: flex;
+  gap: 60px;
+}
+
 .sidebar {
-  width: 270px;
-  padding-right: 40px;
-  font-size: 15px;
+  width: 260px;
 }
 
-.sidebar-section {
-  margin-bottom: 18px;
-  font-weight: 600;
-  color: #5A5A5A;
+.site-content {
+  flex: 1;
+  max-width: 760px;
 }
 
-.menu-list {
+/* ----------------------------------------
+   MENU (LEFT COLUMN)
+---------------------------------------- */
+
+.menu {
   display: flex;
   flex-direction: column;
 }
 
 .menu-item {
+  display: flex;
+  align-items: center;
   padding: 10px 12px;
+  margin-bottom: 4px;
   border-bottom: 1px solid #CFC8BE;
   text-decoration: none;
   color: #2A2A2A;
-  display: block;
-  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 15px;
+  font-weight: 300;
+  background: transparent;
 
   transition:
     color 0.25s ease,
@@ -56,89 +87,63 @@ html, body {
     padding-left 0.25s ease;
 }
 
-/* ----------------------------------------
-   ARROW (with slide-in animation)
----------------------------------------- */
-
+/* ARROW – starts slightly left and hidden */
 .menu-item .arrow {
   margin-right: 6px;
   opacity: 0;
   visibility: hidden;
-
-  /* NEW animation */
-  transform: translateX(-6px);  /* starts left */
+  transform: translateX(-6px);
   transition:
     opacity 0.25s ease,
     transform 0.25s ease;
 }
 
-/* active state */
+/* ACTIVE ITEM (current page/post) */
 .menu-item.active {
   background: #E8E3DC;
+  font-weight: 400;
 }
 
-/* arrow appears + slides in */
 .menu-item.active .arrow {
   opacity: 1;
   visibility: visible;
-  transform: translateX(0px); /* slides into final position */
+  transform: translateX(0);
 }
 
-/* ----------------------------------------
-   HOVER EFFECTS (smooth premium feel)
----------------------------------------- */
-
+/* HOVER EFFECT (smooth, RKG-ish) */
 .menu-item:hover {
-  color: #1D1D1D;
-  letter-spacing: 0.3px;
-  padding-left: 16px;
+  color: #1D1D1D;        /* slightly darker text */
+  letter-spacing: 0.09em;
+  padding-left: 18px;    /* soft slide to the right */
 }
 
 /* ----------------------------------------
-   MAIN CONTENT
+   CONTENT TYPOGRAPHY
 ---------------------------------------- */
-
-.site-content {
-  flex: 1;
-  max-width: 750px;
-}
 
 .post-title {
-  font-size: 44px;
+  font-size: 40px;
   margin-top: 0;
-  margin-bottom: 28px;
-  font-weight: 500;
-}
-
-p {
-  font-size: 18px;
   margin-bottom: 22px;
+  font-weight: 400;
+}
+
+.site-content p {
+  font-size: 17px;
+  margin-bottom: 20px;
 }
 
 /* ----------------------------------------
-   ABOUT HEADER
+   RESPONSIVE (simple)
 ---------------------------------------- */
 
-.sidebar-section-title {
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  margin-bottom: 6px;
-  color: #5A5A5A;
-  transition: color 0.2s ease;
-}
+@media (max-width: 800px) {
+  .layout {
+    flex-direction: column;
+    gap: 24px;
+  }
 
-.sidebar-section-title:hover {
-  color: #1e1e1e;
-}
-
-/* ----------------------------------------
-   FOOTER
----------------------------------------- */
-
-.site-footer {
-  margin-top: 60px;
-  font-size: 13px;
-  color: #777;
-  border-top: 1px solid #d9d3cb;
-  padding-top: 12px;
+  .sidebar {
+    width: 100%;
+  }
 }
