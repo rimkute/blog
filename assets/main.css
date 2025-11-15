@@ -44,7 +44,7 @@ ul {
   background-color: transparent;  /* Set to transparent */
   border-right: 1px solid #d8d8d8;  /* Light gray border for separation */
   padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  /* Removed box-shadow */
   flex-shrink: 0;  /* Prevent shrinking */
 }
 
@@ -101,7 +101,7 @@ ul {
 
 /* Hover Effect for Links */
 .sidebar-nav a:hover {
-  background-color: #f0f0f0;
+  background-color: #d1c7a1; /* Darkened hover background color */
   color: #333;
   cursor: pointer;
 }
@@ -115,8 +115,10 @@ ul {
 }
 
 .page-title {
-  font-size: 38px;
-  font-weight: 700;
+  font-size: 24px; /* Match the size of "Tarun Bhatt" */
+  font-weight: 400; /* Normal weight to match */
+  letter-spacing: 0.5px; /* Same letter spacing */
+  color: #333; /* Same color */
   margin-bottom: 25px;
 }
 
@@ -132,8 +134,10 @@ ul {
 
 /* Post Styles */
 .post-title {
-  font-size: 34px;
-  font-weight: 700;
+  font-size: 24px; /* Match "Tarun Bhatt" font size */
+  font-weight: 400; /* Normal weight */
+  letter-spacing: 0.5px; /* Same spacing */
+  color: #333; /* Same color */
   margin-bottom: 20px;
 }
 
