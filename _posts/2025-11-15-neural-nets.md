@@ -2,6 +2,7 @@
 layout: post
 title: "Neural Nets"
 permalink: /neural-nets/
+category: neural-nets
 ---
 
 This is my first post.
