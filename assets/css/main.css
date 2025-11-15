@@ -1,11 +1,11 @@
-/* GLOBAL */
+/* GLOBAL: serif body like RKG */
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: Georgia, "Times New Roman", serif;
   background: #f8f4e9;        /* warm off-white */
   color: #333;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* TWO COLUMN LAYOUT */
@@ -22,9 +22,13 @@ html, body {
   box-sizing: border-box;
 }
 
+/* Site title in left column (Ravi Gupta /) */
 .left-title {
+  font-family: "Roboto Condensed", Arial, sans-serif;
   font-size: 1.35rem;
   font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: none;
   margin-bottom: 1.6rem;
   color: #222;
 }
@@ -42,11 +46,13 @@ html, body {
   border-bottom: 1px solid #d4cbb8;
 }
 
+/* Left menu links: condensed all caps like RKG */
 .left-link {
+  font-family: "Roboto Condensed", Arial, sans-serif;
   text-decoration: none;
   color: #5a5a5a;
   font-size: 0.9rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   display: inline-block;
 }
@@ -67,8 +73,16 @@ html, body {
   box-sizing: border-box;
 }
 
+/* Headings on the right: tall, clean sans similar to RKG */
+.right-content h1,
+.right-content h2,
+.right-content h3 {
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  letter-spacing: 0.04em;
+}
+
 .right-content h1 {
-  font-size: 1.9rem;
+  font-size: 2rem;
   margin-top: 0;
   margin-bottom: 1.2rem;
 }
@@ -79,11 +93,12 @@ html, body {
   margin-bottom: 0.75rem;
 }
 
+/* Body text stays serif */
 .right-content p {
   margin-bottom: 1rem;
 }
 
-/* Content links */
+/* Links in content */
 .right-content a {
   color: #0645ad;
   text-decoration: none;
