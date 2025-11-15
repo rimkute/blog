@@ -1,26 +1,12 @@
-# Site settings
 title: "Tarun Bhatt"
-description: ""
+description: "Essays on things I am thinking about."
 baseurl: ""
-url: "https://blog.belmanco.com"
+url: "https://belman.us"
 
-# Build settings
+theme: minima
+
 markdown: kramdown
-permalink: /:title.html
+highlighter: rouge
 
-# Exclude from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - README.md
-  - vendor
-
-# Minimal setup
-plugins: []
-show_excerpts: false
-theme: null
-
-# Author info
-author:
-  name: "Tarun Bhatt"
-  email: "blog@belmanco.com"
+permalink: /:title/
+future: true
