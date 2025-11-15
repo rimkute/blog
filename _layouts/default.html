@@ -11,45 +11,40 @@
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Main stylesheet -->
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-
-  <!-- Roboto Condensed for headings/menu -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="layout">
 
-    <!-- LEFT COLUMN: SIDEBAR -->
+    <!-- LEFT SIDEBAR -->
     <aside>
-
       <div class="sidebar-title">
-      <a href="{{ "/" | relative_url }}" class="site-title-link">{{ site.title }} /</a>
+        <a href="{{ "/" | relative_url }}" class="site-title-link">{{ site.title }} /</a>
       </div>
 
       <ul class="sidebar-list">
 
-        {%- assign on_home = page.url == "/" -%}
-        <li class="sidebar-item{% if on_home %} active{% endif %}">
-          <a href="{{ "/" | relative_url }}" class="sidebar-link">
-            About
-          </a>
+        <!-- ABOUT (never shows arrow) -->
+        <li class="sidebar-item">
+          <a href="{{ "/about/" | relative_url }}" class="sidebar-link">About</a>
         </li>
 
-        {%- for post in site.posts -%}
-          {%- assign is_current = post.url == page.url -%}
+        <!-- POSTS (arrow shows only on the post being viewed) -->
+        {% for post in site.posts %}
+          {% assign is_current = post.url == page.url %}
           <li class="sidebar-item{% if is_current %} active{% endif %}">
             <a href="{{ post.url | relative_url }}" class="sidebar-link">
               {{ post.title }}
             </a>
           </li>
-        {%- endfor -%}
+        {% endfor %}
 
       </ul>
     </aside>
 
-    <!-- RIGHT COLUMN: CONTENT -->
+    <!-- RIGHT COLUMN (CONTENT) -->
     <main class="site-content">
       {{ content }}
     </main>
