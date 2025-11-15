@@ -1,176 +1,149 @@
-/* ------------------------------
-   Base Page Styling
------------------------------- */
-
+/* Global reset */
 html, body {
   margin: 0;
   padding: 0;
   font-family: "Roboto Condensed", sans-serif;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.65;
   color: #2A2A2A;
-  background: #f5eee4; /* your chosen background */
+  background: #f5eee4;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ------------------------------
-   Layout
------------------------------- */
-
-.wrapper {
+/* Layout container */
+.layout {
   display: flex;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 40px 40px 80px 40px;
+  padding: 60px 40px;
+  gap: 60px;
 }
 
+/* Sidebar */
 .sidebar {
-  width: 260px;
-  padding-right: 40px;
-  border-right: 1px solid #c9c1b8;
+  width: 270px;
+  flex-shrink: 0;
 }
 
-.content {
-  flex-grow: 1;
-  max-width: 780px;
-  padding-left: 60px;
-}
-
-/* ------------------------------
-   Header / Name
------------------------------- */
-
+/* Name at the top */
 .site-title {
-  display: inline-block;
-  font-size: 32px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  margin-bottom: 24px;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  letter-spacing: 0.5px;
+}
+
+.site-title a {
   color: #2A2A2A;
   text-decoration: none;
-  position: relative;
-  padding-bottom: 4px;
 }
 
-/* subtle underline on hover */
-.site-title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 1px;
-  width: 0;
-  background: #2A2A2A;
-  transition: width 0.3s ease;
+.slash {
+  padding-left: 8px;
+  color: #999;
 }
 
-.site-title:hover::after {
-  width: 100%;
-}
-
-/* ------------------------------
-   Navigation / Sidebar Menu
------------------------------- */
-
-.sidebar ul {
+/* Sidebar nav */
+.sidebar-nav ul {
   list-style: none;
+  margin: 0;
   padding: 0;
-  margin: 24px 0 0 0;
 }
 
-.sidebar li {
-  margin-bottom: 4px;
+.sidebar-nav li {
+  margin-bottom: 10px;
 }
 
-.sidebar a {
-  display: block;
-  padding: 10px 14px;
-  color: #2A2A2A;
+/* Sidebar links */
+.sidebar-nav a {
   text-decoration: none;
-  border-bottom: 1px solid #c9c1b8;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 14px;
-  font-weight: 300;
+  color: #333;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  padding: 4px 2px;
+  display: inline-block;
+
+  /* Smooth hover animation */
   transition:
-    background-color 0.25s ease,
-    padding-left 0.25s ease,
-    color 0.25s ease;
+    color 0.18s ease,
+    letter-spacing 0.18s ease;
 }
 
-/* Hover animation */
-.sidebar a:hover {
-  background-color: #e9dfd1;
-  padding-left: 20px;
+.sidebar-nav a:hover {
+  color: #111;
+  letter-spacing: 0.8px;
+}
+
+/* Active link highlight */
+.sidebar-nav li.active a {
+  background: #e8dccf;
+  padding: 4px 8px;
+  border-radius: 6px;
   color: #000;
+  font-weight: 600;
 }
 
-/* Active / current page styling */
-.sidebar li.active a {
-  background-color: #e5dbcd;
-  padding-left: 20px;
-  font-weight: 500;
-  position: relative;
+/* Main content */
+.content {
+  flex: 1;
+  max-width: 700px;
 }
 
-/* Arrow for active link */
-.sidebar li.active a::before {
-  content: "→";
-  position: absolute;
-  left: -18px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 14px;
-  color: #2A2A2A;
-}
-
-/* ------------------------------
-   Content Area Typography
------------------------------- */
-
-.content h1 {
-  font-weight: 500;
-  font-size: 36px;
+/* Page title */
+.page-title {
   margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+/* Body text */
+.page-content p,
+.post-content p {
   margin-bottom: 20px;
 }
 
-.content p {
-  margin-bottom: 18px;
-  font-size: 17px;
+/* Improve spacing for markdown headers */
+.page-content h1,
+.post-content h1 {
+  font-size: 28px;
+  margin-top: 28px;
+  margin-bottom: 16px;
 }
 
-/* Links inside content */
-.content a {
-  color: #2A2A2A;
-  text-decoration: underline;
-  transition: color 0.2s ease;
+.page-content h2,
+.post-content h2 {
+  font-size: 24px;
+  margin-top: 26px;
+  margin-bottom: 14px;
 }
 
-.content a:hover {
-  color: #000;
+.page-content h3,
+.post-content h3 {
+  font-size: 20px;
+  margin-top: 24px;
+  margin-bottom: 12px;
 }
 
-/* ------------------------------
-   Responsive
------------------------------- */
+/* Lists */
+.page-content ul,
+.post-content ul {
+  padding-left: 24px;
+  margin-bottom: 20px;
+}
 
-@media (max-width: 800px) {
-  .wrapper {
-    flex-direction: column;
-    padding: 20px;
-  }
+/* Code blocks */
+pre, code {
+  background: #eee5d7;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-family: Menlo, monospace;
+}
 
-  .sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #c9c1b8;
-    padding-right: 0;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-  }
-
-  .content {
-    padding-left: 0;
-  }
+/* Images */
+img {
+  max-width: 100%;
+  border-radius: 6px;
+  display: block;
+  margin: 20px 0;
 }
