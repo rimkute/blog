@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Neural Nets"
+permalink: /neural-nets/
 ---
 
 This is my first post.
