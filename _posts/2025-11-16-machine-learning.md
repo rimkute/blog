@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Machine Learning"
-date: 2025-11-16
+date: 2025-11-14
 permalink: /machine-learning/
 category: AI/ML
 ---
