@@ -2,9 +2,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #f8f5ed;
-  color: #222;
+  font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f8f4e9;        /* warm off-white */
+  color: #333;
   line-height: 1.5;
 }
 
@@ -17,18 +17,19 @@ html, body {
 /* LEFT MENU COLUMN */
 .left-menu {
   width: 32%;
-  padding: 2rem 1.5rem;
-  border-right: 1px solid #d6d2c4;
+  padding: 2rem 1.75rem;
+  border-right: 1px solid #d4cbb8;
   box-sizing: border-box;
 }
 
 .left-title {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
   color: #222;
 }
 
+/* List of posts in left column */
 .left-list {
   list-style: none;
   padding: 0;
@@ -37,36 +38,37 @@ html, body {
 
 .left-item {
   margin: 0;
-  padding: 0.4rem 0;
-  border-bottom: 1px solid #d6d2c4;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid #d4cbb8;
 }
 
 .left-link {
   text-decoration: none;
-  color: #3a3a3a;
-  font-size: 0.92rem;
-  letter-spacing: 0.04em;
+  color: #5a5a5a;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   display: inline-block;
 }
 
 .left-link:hover {
-  color: #111;
+  color: #222;
 }
 
 .left-link-active {
   font-weight: 600;
+  color: #222;
 }
 
 /* RIGHT CONTENT COLUMN */
 .right-content {
   width: 68%;
-  padding: 3rem 3rem 5rem 3rem;
+  padding: 3rem 3rem 4rem 3rem;
   box-sizing: border-box;
 }
 
 .right-content h1 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   margin-top: 0;
   margin-bottom: 1.2rem;
 }
@@ -81,7 +83,7 @@ html, body {
   margin-bottom: 1rem;
 }
 
-/* LINKS IN CONTENT */
+/* Content links */
 .right-content a {
   color: #0645ad;
   text-decoration: none;
@@ -91,7 +93,7 @@ html, body {
   text-decoration: underline;
 }
 
-/* SIMPLE TYPOGRAPHY REFINEMENTS */
+/* Lists in content */
 .right-content ul,
 .right-content ol {
   margin: 0 0 1rem 1.25rem;
@@ -111,7 +113,7 @@ html, body {
   .left-menu {
     width: 100%;
     border-right: none;
-    border-bottom: 1px solid #d6d2c4;
+    border-bottom: 1px solid #d4cbb8;
   }
 
   .right-content {
