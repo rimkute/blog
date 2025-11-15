@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "About"
 date: 2025-11-12
 permalink: /about/
