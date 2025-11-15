@@ -1,102 +1,164 @@
-/* GLOBAL PAGE BACKGROUND */
-body {
+/* ----------------------------------------
+   GLOBAL
+---------------------------------------- */
+
+html, body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background: #f5eee4;
-  color: #222;
+  padding: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 1.6;
+  color: #2A2A2A;
+  background: #f5eee4;  /* your chosen background */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* PAGE LAYOUT */
-.layout {
-  display: flex;
-  min-height: 100vh;
-  padding: 40px 60px;
+.site-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 40px 80px 40px;
 }
 
-.sidebar {
-  width: 260px;
-  padding-right: 40px;
+/* ----------------------------------------
+   HEADER / NAME
+---------------------------------------- */
+
+.site-header {
+  margin-bottom: 24px;
 }
 
-/* ---- OPTION 1.5: SITE NAME PREMIUM STYLE ---- */
+/* Option 1.5: bolder name + subtle underline on hover */
 .site-name {
   display: inline-block;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  color: #222;
+  letter-spacing: 0.06em;
+  color: #2A2A2A;
   text-decoration: none;
   position: relative;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 }
 
 .site-name::after {
   content: "";
   position: absolute;
-  bottom: 0;
   left: 0;
-  width: 0;
+  bottom: 0;
   height: 1px;
-  background: #000;
-  transition: width 0.35s ease;
+  width: 0;
+  background: #2A2A2A;
+  transition: width 0.3s ease;
 }
 
 .site-name:hover::after {
   width: 100%;
 }
 
-/* NAVIGATION */
-.nav ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 30px;
+/* ----------------------------------------
+   LAYOUT
+---------------------------------------- */
+
+.layout {
+  display: flex;
+  gap: 60px;
 }
 
-.nav li {
-  margin-bottom: 12px;
+.sidebar {
+  width: 260px;
 }
 
-.nav a {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: #333;
-  display: block;
-  padding: 8px 0;
-  border-bottom: 1px solid #ccc;
-  transition: color 0.25s ease;
-}
-
-/* Hover effect on all nav links */
-.nav a:hover {
-  color: #000;
-}
-
-/* ACTIVE POST HIGHLIGHT LIKE YOUR EXAMPLE */
-.nav li.active a {
-  background: #e7e0d8;
-  padding-left: 12px;
-  border-left: 3px solid #000;
-  font-weight: 500;
-}
-
-/* MAIN CONTENT */
-.content {
+.site-content {
   flex: 1;
-  max-width: 800px;
-  padding-left: 60px;
-  padding-top: 10px;
+  max-width: 760px;
 }
 
-.content h1 {
-  font-size: 32px;
+/* ----------------------------------------
+   SIDEBAR MENU
+---------------------------------------- */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #CFC8BE;
+  text-decoration: none;
+  color: #2A2A2A;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 15px;
+  font-weight: 300;
+  background: transparent;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    letter-spacing 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+/* ARROW – starts hidden and slightly left */
+.menu-item .arrow {
+  margin-right: 6px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-6px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* ACTIVE ITEM */
+.menu-item.active {
+  background: #E8E3DC;
+  font-weight: 400;
+}
+
+.menu-item.active .arrow {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* HOVER EFFECT */
+.menu-item:hover {
+  color: #1D1D1D;
+  letter-spacing: 0.09em;
+  padding-left: 18px;
+}
+
+/* ----------------------------------------
+   CONTENT TYPOGRAPHY
+---------------------------------------- */
+
+.post-title {
+  font-size: 40px;
   margin-top: 0;
+  margin-bottom: 22px;
+  font-weight: 400;
+}
+
+.site-content p {
+  font-size: 17px;
   margin-bottom: 20px;
 }
 
-.content p {
-  font-size: 17px;
-  line-height: 1.55;
-  margin-bottom: 18px;
+/* ----------------------------------------
+   RESPONSIVE
+---------------------------------------- */
+
+@media (max-width: 800px) {
+  .layout {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
 }
