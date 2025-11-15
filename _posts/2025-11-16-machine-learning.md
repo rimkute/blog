@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Machine Learning"
 date: 2025-11-16
 permalink: /machine-learning/
