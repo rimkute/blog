@@ -3,45 +3,47 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
 
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <title>{{ page.title }} — {{ site.title }}</title>
+
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
+    <div class="layout">
+      <aside class="sidebar">
 
-    <div class="container">
-
-      <header class="sidebar">
+        <!-- SITE NAME WITH HOVER UNDERLINE ANIMATION -->
         <a href="{{ '/' | relative_url }}" class="site-name">
           Tarun Bhatt&nbsp;&nbsp;/
         </a>
 
-        <nav class="nav-links">
-          {% assign current = page.url | remove: '/' %}
+        <nav class="nav">
+          <ul>
+            {% for page in site.pages %}
+              {% if page.title and page.nav == true %}
+                <li>
+                  <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
 
-          <a href="{{ '/about/' | relative_url }}"
-             class="{% if current == 'about' %}active{% endif %}">
-             ABOUT
-          </a>
-
-          <a href="{{ '/machine-learning/' | relative_url }}"
-             class="{% if current == 'machine-learning' %}active{% endif %}">
-             MACHINE LEARNING
-          </a>
-
-          <a href="{{ '/neural-nets/' | relative_url }}"
-             class="{% if current == 'neural-nets' %}active{% endif %}">
-             NEURAL NETS
-          </a>
+            {% for post in site.posts %}
+              <li class="{% if page.url == post.url %}active{% endif %}">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
         </nav>
-      </header>
+
+      </aside>
 
       <main class="content">
         {{ content }}
       </main>
-
     </div>
-
   </body>
 </html>
