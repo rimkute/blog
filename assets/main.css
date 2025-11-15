@@ -141,7 +141,7 @@ ul {
 }
 
 .post-content {
-  font-size: 20px;
+  font-size: 16px; /* Smaller font size for content */
   line-height: 1.7;
 }
 
