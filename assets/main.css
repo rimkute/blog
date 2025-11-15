@@ -23,11 +23,27 @@ ul {
   list-style: none;
 }
 
+/* Main Layout Styles */
+.layout {
+  display: flex;
+  flex-direction: row;  /* Two-column layout */
+  margin: 20px;
+  gap: 20px;
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 /* Sidebar Styles */
 .sidebar {
-  width: 260px;
+  width: 260px; /* Adjusted width of sidebar */
+  background-color: #fff;
   border-right: 1px solid #cfc4b4;
-  padding-right: 40px;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .site-title {
@@ -43,15 +59,14 @@ ul {
 }
 
 .sidebar-nav ul {
-  margin-top: 35px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 
-/* Sidebar links */
 .sidebar-nav a {
-  padding: 12px 4px;
+  padding: 12px 10px;
   display: block;
   border-bottom: 1px solid #d8cfc2;
   font-size: 16px;
@@ -69,13 +84,15 @@ ul {
   background: #e9dfd3;
   font-weight: 700;
   border-left: 4px solid #b8a898;
-  padding-left: 12px;
+  padding-left: 14px;
 }
 
 /* Main Content Styles */
-.content {
+.site-content {
   flex: 1;
-  padding-top: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .page-title {
@@ -109,10 +126,19 @@ ul {
   margin-bottom: 22px;
 }
 
+/* Footer Styles */
+.site-footer {
+  background: #f5eee4;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
 /* Responsive Styles */
 @media (max-width: 900px) {
   .layout {
-    flex-direction: column;
+    flex-direction: column;  /* Stack sidebar and content */
     padding: 20px;
   }
 
