@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Machine Learning"
+permalink: /machine-learning/
 ---
 
 This is my first post.
