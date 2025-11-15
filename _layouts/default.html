@@ -1,61 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ page.title }}</title>
-
-  <!-- Google Font -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} • Tarun Bhatt</title>
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
-
-  <!-- Correct CSS paths -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 
 <body>
+  <div class="layout">
 
-<div class="layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <h1 class="site-title">
-      <a href="{{ '/' | relative_url }}">Tarun Bhatt</a>
-      <span class="slash">/</span>
-    </h1>
+      <div class="site-title">
+        <a href="{{ '/' | relative_url }}">Tarun Bhatt</a>
+        <span class="slash">/</span>
+      </div>
 
-    <nav class="sidebar-nav">
-      <ul>
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="{% if page.url == '/' %}active{% endif %}">
+            <a href="{{ '/' | relative_url }}">About</a>
+          </li>
 
-        <li class="{% if page.url == '/' %}active{% endif %}">
-          <a href="{{ '/' | relative_url }}">About</a>
-        </li>
+          {% for post in site.posts %}
+          <li class="{% if page.url == post.url %}active{% endif %}">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
 
-        <li class="{% if page.url contains '/machine-learning' %}active{% endif %}">
-          <a href="{{ '/machine-learning/' | relative_url }}">Machine Learning</a>
-        </li>
+    </aside>
 
-        <li class="{% if page.url contains '/neural-nets' %}active{% endif %}">
-          <a href="{{ '/neural-nets/' | relative_url }}">Neural Nets</a>
-        </li>
 
-        <li class="{% if page.url contains '/systems-thinking' %}active{% endif %}">
-          <a href="{{ '/systems-thinking/' | relative_url }}">Systems Thinking</a>
-        </li>
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      {% if page.title %}
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% endif %}
 
-      </ul>
-    </nav>
-  </aside>
+      <div class="page-content">
+        {{ content }}
+      </div>
+    </main>
 
-  <!-- MAIN CONTENT -->
-  <main class="content">
-    <h1 class="page-title">{{ page.title }}</h1>
-    <div class="page-content">
-      {{ content }}
-    </div>
-  </main>
-
-</div>
-
+  </div>
 </body>
 </html>
