@@ -1,62 +1,102 @@
-/* GLOBAL LAYOUT */
+/* GLOBAL PAGE BACKGROUND */
 body {
   margin: 0;
-  padding: 0;
+  font-family: 'Roboto', sans-serif;
   background: #f5eee4;
-  font-family: "Roboto Mono", monospace;
   color: #222;
 }
 
-.container {
+/* PAGE LAYOUT */
+.layout {
   display: flex;
-  max-width: 1400px;
-  margin: 0 auto;
+  min-height: 100vh;
   padding: 40px 60px;
 }
 
-/* SIDEBAR */
 .sidebar {
   width: 260px;
-  margin-right: 80px;
+  padding-right: 40px;
 }
 
-/* ---------- OPTION 1: ENHANCED NAME ---------- */
+/* ---- OPTION 1.5: SITE NAME PREMIUM STYLE ---- */
 .site-name {
   display: inline-block;
-  font-size: 28px;        /* +1 size */
-  font-weight: 700;       /* bolder for distinctiveness */
-  letter-spacing: 0.5px;  /* subtle spacing */
-  text-decoration: none;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   color: #222;
-  margin-bottom: 30px;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 6px;
 }
 
-/* NAVIGATION LINKS */
-.nav-links a {
-  display: block;
-  padding: 12px 0;
+.site-name::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: width 0.35s ease;
+}
+
+.site-name:hover::after {
+  width: 100%;
+}
+
+/* NAVIGATION */
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.nav li {
+  margin-bottom: 12px;
+}
+
+.nav a {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   text-decoration: none;
   color: #333;
-  border-bottom: 1px solid #000;
-  font-size: 14px;
-
-  transition: color 0.25s ease, padding-left 0.25s ease;
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+  transition: color 0.25s ease;
 }
 
-.nav-links a:hover {
-  color: #111;
-  padding-left: 4px;
-}
-
-.nav-links a.active {
-  background: #e8e0d4;
+/* Hover effect on all nav links */
+.nav a:hover {
   color: #000;
-  padding-left: 4px;
 }
 
-/* CONTENT AREA */
+/* ACTIVE POST HIGHLIGHT LIKE YOUR EXAMPLE */
+.nav li.active a {
+  background: #e7e0d8;
+  padding-left: 12px;
+  border-left: 3px solid #000;
+  font-weight: 500;
+}
+
+/* MAIN CONTENT */
 .content {
+  flex: 1;
   max-width: 800px;
+  padding-left: 60px;
+  padding-top: 10px;
+}
+
+.content h1 {
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.content p {
   font-size: 17px;
-  line-height: 1.6;
+  line-height: 1.55;
+  margin-bottom: 18px;
 }
