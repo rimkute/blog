@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>
-    {% if page.title %}
-      {{ page.title }} | Tarun Bhatt
-    {% else %}
-      Tarun Bhatt
-    {% endif %}
-  </title>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} — {{ site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Font + CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 
 <body>
-  <div class="site-wrapper">
 
-    <header class="site-header">
-      <!-- hardcoded name with two spaces before slash -->
-      <a href="{{ "/" | relative_url }}" class="site-name">
-        Tarun Bhatt&nbsp;&nbsp;/
-      </a>
-    </header>
+<div class="wrapper">
 
-    <div class="layout">
+  <!-- ============================
+       SIDEBAR
+  ============================= -->
+  <aside class="sidebar">
 
-      <aside class="sidebar">
-        <nav class="menu">
+    <!-- Site Title -->
+    <a href="{{ '/' | relative_url }}" class="site-title">
+      Tarun Bhatt&nbsp;&nbsp;/
+    </a>
 
-          <!-- ABOUT PAGE -->
-          <a href="{{ "/about/" | relative_url }}"
-             class="menu-item {% if page.url == "/about/" %}active{% endif %}">
-            <span class="arrow">→</span> ABOUT
-          </a>
+    <!-- Tagline -->
+    <div class="tagline">AI, Operations, Systems Thinking</div>
 
-          <!-- POSTS -->
-          {% for post in site.posts %}
-            <a href="{{ post.url | relative_url }}"
-               class="menu-item {% if page.url == post.url %}active{% endif %}">
-              <span class="arrow">→</span> {{ post.title | upcase }}
-            </a>
-          {% endfor %}
+    <!-- Navigation -->
+    <ul>
+      <li>
+        <a class="{% if page.url == '/about/' or page.url == '/' %}active{% endif %}"
+           href="{{ '/about/' | relative_url }}">
+          ABOUT
+        </a>
+      </li>
 
-        </nav>
-      </aside>
+      {% assign sorted_posts = site.posts | sort: 'title' %}
+      {% for post in sorted_posts %}
+      <li>
+        <a class="{% if page.url == post.url %}active{% endif %}"
+           href="{{ post.url | relative_url }}">
+          {{ post.title | upcase }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
 
-      <main class="site-content">
-        {{ content }}
-      </main>
+  </aside>
 
-    </div>
-  </div>
+  <!-- ============================
+       MAIN CONTENT
+  ============================= -->
+  <main class="content">
+    <h1>{{ page.title }}</h1>
+    {{ content }}
+  </main>
+
+</div>
+
 </body>
 </html>
