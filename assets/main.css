@@ -1,0 +1,157 @@
+/* -----------------------------------------------------------
+   GLOBAL RESET + THEME
+----------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Roboto Condensed", sans-serif;
+  background: #f5eee4;
+  color: #2d2d2d;
+  height: 100%;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* -----------------------------------------------------------
+   LAYOUT
+----------------------------------------------------------- */
+.layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 60px;
+  gap: 80px;
+}
+
+
+/* -----------------------------------------------------------
+   SIDEBAR
+----------------------------------------------------------- */
+.sidebar {
+  width: 260px;
+  border-right: 1px solid #cfc4b4;
+  padding-right: 40px;
+}
+
+.site-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.site-title .slash {
+  margin-left: 10px;
+  opacity: 0.55;
+}
+
+.sidebar-nav ul {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Normal link */
+.sidebar-nav a {
+  padding: 12px 4px;
+  display: block;
+  border-bottom: 1px solid #d8cfc2;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #3a3a3a;
+}
+
+/* Active menu item */
+.sidebar-nav li.active a {
+  background: #e9dfd3;
+  font-weight: 700;
+  border-left: 4px solid #b8a898;
+  padding-left: 12px;
+}
+
+/* Hover animation */
+.sidebar-nav a:hover {
+  background: #efe6db;
+}
+
+
+/* -----------------------------------------------------------
+   MAIN CONTENT
+----------------------------------------------------------- */
+.content {
+  flex: 1;
+  padding-top: 10px;
+}
+
+.page-title {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.page-content {
+  font-size: 19px;
+  max-width: 800px;
+}
+
+.page-content p {
+  margin-bottom: 20px;
+}
+
+
+/* -----------------------------------------------------------
+   POST STYLING
+----------------------------------------------------------- */
+.post-title {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.post-content {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.post-content p {
+  margin-bottom: 22px;
+}
+
+
+/* -----------------------------------------------------------
+   RESPONSIVE
+----------------------------------------------------------- */
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #cfc4b4;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .sidebar-nav a {
+    border-bottom: 1px solid #cfc4b4;
+  }
+}
