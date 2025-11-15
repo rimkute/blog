@@ -26,14 +26,14 @@
 
       <ul class="sidebar-list">
 
-        <!-- ABOUT (never shows arrow) -->
+        <!-- ABOUT: never gets an arrow -->
         <li class="sidebar-item">
           <a href="{{ "/about/" | relative_url }}" class="sidebar-link">About</a>
         </li>
 
-        <!-- POSTS (arrow shows only on the post being viewed) -->
+        <!-- POSTS: arrow only on the post being read -->
         {% for post in site.posts %}
-          {% assign is_current = post.url == page.url %}
+          {% assign is_current = (page.layout == "post") and (post.url == page.url) %}
           <li class="sidebar-item{% if is_current %} active{% endif %}">
             <a href="{{ post.url | relative_url }}" class="sidebar-link">
               {{ post.title }}
@@ -44,7 +44,7 @@
       </ul>
     </aside>
 
-    <!-- RIGHT COLUMN (CONTENT) -->
+    <!-- RIGHT COLUMN -->
     <main class="site-content">
       {{ content }}
     </main>
