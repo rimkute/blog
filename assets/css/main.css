@@ -7,7 +7,7 @@ html, body {
   background: #F5F0E9;
   color: #3c3934;
   font-weight: 300;
-  font-size: 17px; /* +1 size */
+  font-size: 17px;
 }
 
 /* GRID LAYOUT ------------------------------------------------------- */
@@ -65,10 +65,14 @@ html, body {
   border-bottom: 1px solid #3c3934;
 }
 
-/* ACTIVE ITEM: ONLY THE CURRENT POST ------------------------------- */
+/* ACTIVE ITEM HIGHLIGHT (controlled by JS) ------------------------- */
+/* 1) Arrow to the left
+   2) Slightly bolder weight
+   3) Light background so it's obvious even without the arrow        */
 
 .sidebar-item.active .sidebar-link {
   font-weight: 400;
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .sidebar-item.active .sidebar-link::before {
