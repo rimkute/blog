@@ -11,14 +11,17 @@
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+
+  <!-- Roboto Condensed font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="layout">
 
-    <!-- LEFT SIDEBAR -->
+    <!-- LEFT SIDEBAR ------------------------------------------------>
     <aside>
       <div class="sidebar-title">
         <a href="{{ "/" | relative_url }}" class="site-title-link">{{ site.title }} /</a>
@@ -26,12 +29,12 @@
 
       <ul class="sidebar-list">
 
-        <!-- ABOUT: never gets an arrow -->
+        <!-- ABOUT (no arrow ever) -->
         <li class="sidebar-item">
-          <a href="{{ "/about/" | relative_url }}" class="sidebar-link">About</a>
+          <a href="{{ "/about/" | relative_url }}" class="sidebar-link">ABOUT</a>
         </li>
 
-        <!-- POSTS: arrow only on the post being read -->
+        <!-- POSTS (arrow only on active post) -->
         {% for post in site.posts %}
           {% assign is_current = (page.layout == "post") and (post.url == page.url) %}
           <li class="sidebar-item{% if is_current %} active{% endif %}">
@@ -44,7 +47,7 @@
       </ul>
     </aside>
 
-    <!-- RIGHT COLUMN -->
+    <!-- RIGHT CONTENT ---------------------------------------------->
     <main class="site-content">
       {{ content }}
     </main>
