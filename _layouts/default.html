@@ -1,56 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>
-    {% if page.title %}
-      {{ page.title }} | {{ site.title }}
-    {% else %}
-      {{ site.title }}
-    {% endif %}
-  </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
 
-  <!-- Font + CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-</head>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  </head>
 
-<body>
-  <div class="site-wrapper">
+  <body>
 
-    <header class="site-header">
-      <a href="{{ "/" | relative_url }}" class="site-name">Tarun Bhatt&nbsp;&nbsp;&nbsp;&nbsp;/</a>
+    <div class="container">
 
-    </header>
+      <header class="sidebar">
+        <a href="{{ '/' | relative_url }}" class="site-name">
+          Tarun Bhatt&nbsp;&nbsp;/
+        </a>
 
-    <div class="layout">
+        <nav class="nav-links">
+          {% assign current = page.url | remove: '/' %}
 
-      <aside class="sidebar">
-        <nav class="menu">
-
-          <!-- ABOUT -->
-          <a href="{{ "/about/" | relative_url }}"
-             class="menu-item {% if page.url == "/about/" %}active{% endif %}">
-            <span class="arrow">→</span> ABOUT
+          <a href="{{ '/about/' | relative_url }}"
+             class="{% if current == 'about' %}active{% endif %}">
+             ABOUT
           </a>
 
-          <!-- POSTS -->
-          {% for post in site.posts %}
-            <a href="{{ post.url | relative_url }}"
-               class="menu-item {% if page.url == post.url %}active{% endif %}">
-              <span class="arrow">→</span> {{ post.title | upcase }}
-            </a>
-          {% endfor %}
+          <a href="{{ '/machine-learning/' | relative_url }}"
+             class="{% if current == 'machine-learning' %}active{% endif %}">
+             MACHINE LEARNING
+          </a>
 
+          <a href="{{ '/neural-nets/' | relative_url }}"
+             class="{% if current == 'neural-nets' %}active{% endif %}">
+             NEURAL NETS
+          </a>
         </nav>
-      </aside>
+      </header>
 
-      <main class="site-content">
+      <main class="content">
         {{ content }}
       </main>
 
     </div>
-  </div>
-</body>
+
+  </body>
 </html>
