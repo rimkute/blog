@@ -1,15 +1,15 @@
-/* GLOBAL – serif body, slightly small, comfortable leading */
+/* GLOBAL */
 html, body {
   margin: 0;
   padding: 0;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 15px;
-  line-height: 1.6;
-  background: #f8f4e9;
-  color: #37352f;
+  line-height: 1.62;
+  background: #f5f1e6;  /* closer to #f3efe3 used on RKG */
+  color: #3a3730;
 }
 
-/* TWO COLUMN LAYOUT */
+/* LAYOUT */
 .layout-2col {
   display: flex;
   min-height: 100vh;
@@ -17,23 +17,23 @@ html, body {
 
 /* LEFT MENU COLUMN */
 .left-menu {
-  width: 32%;
-  padding: 2.25rem 1.9rem 2.5rem 1.9rem;
-  border-right: 1px solid #d4cbb8;
+  width: 30%;
+  padding: 2.2rem 1.9rem 2.8rem;
+  border-right: 1px solid #d8d1c2; /* softer, lighter */
   box-sizing: border-box;
 }
 
-/* Site title (Ravi Gupta / style) */
+/* Site title */
 .left-title {
   font-family: "Roboto Condensed", Arial, sans-serif;
-  font-size: 1.45rem;          /* ~23px */
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 1.42rem;
+  font-weight: 400;            /* NOT bold */
+  letter-spacing: 0.06em;
   color: #222;
-  margin: 0 0 1.8rem 0;
+  margin-bottom: 2rem;
 }
 
-/* Post list */
+/* MENU LIST */
 .left-list {
   list-style: none;
   padding: 0;
@@ -41,87 +41,85 @@ html, body {
 }
 
 .left-item {
-  margin: 0;
-  padding: 0.42rem 0;
-  border-bottom: 1px solid #d4cbb8;
+  padding: 0.5rem 0 0.45rem 0;
+  border-bottom: 1px solid #d8d1c2; /* thinner, lighter line */
 }
 
-/* Menu links – condensed all caps, small, spaced */
+/* MENU LINKS */
 .left-link {
   font-family: "Roboto Condensed", Arial, sans-serif;
   text-decoration: none;
-  color: #6a6a6a;
-  font-size: 0.8rem;           /* ~12px */
-  letter-spacing: 0.18em;
+  color: #5e5a54;
+  font-size: 0.78rem;           /* smaller, matches RKG */
+  letter-spacing: 0.19em;
   text-transform: uppercase;
   display: inline-block;
-  padding-left: 0;             /* keep arrow flush left */
+  font-weight: 300;             /* light weight */
 }
 
 .left-link:hover {
   color: #222;
 }
 
+/* ACTIVE LINK (arrow) */
 .left-link-active {
-  font-weight: 600;
+  font-weight: 400;             /* not bold */
+  color: #222;
+}
+
+.left-link-active::before {
+  content: "-> ";
+  font-weight: 300;
   color: #222;
 }
 
 /* RIGHT CONTENT COLUMN */
 .right-content {
-  width: 68%;
-  padding: 3rem 3.2rem 4rem 3.2rem;
+  width: 70%;
+  padding: 3rem 3rem 4rem;
   box-sizing: border-box;
 }
 
-/* Limit text width like an essay column */
+/* Limit text width */
 .right-content > * {
-  max-width: 44rem;            /* ~660px */
+  max-width: 46rem;
 }
 
-/* Headings on right – tall condensed, airy tracking */
+/* HEADINGS */
 .right-content h1,
 .right-content h2,
 .right-content h3 {
   font-family: "Roboto Condensed", Arial, sans-serif;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.07em;
   color: #222;
+  font-weight: 300;              /* thinner like RKG */
 }
 
 .right-content h1 {
-  font-size: 2.15rem;          /* ~32px */
-  font-weight: 400;
-  margin: 0 0 1.25rem 0;
+  font-size: 2rem;
+  margin: 0 0 1.2rem;
 }
 
 .right-content h2 {
-  font-size: 1.35rem;
-  font-weight: 400;
-  margin: 1.8rem 0 0.9rem 0;
+  font-size: 1.28rem;
+  margin: 1.7rem 0 0.9rem;
 }
 
-.right-content h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 1.4rem 0 0.7rem 0;
-}
-
-/* Paragraphs – classic essay feel */
+/* BODY TEXT */
 .right-content p {
-  margin: 0 0 0.95rem 0;
+  margin: 0 0 1rem 0;
 }
 
-/* Links inside content */
+/* LINKS */
 .right-content a {
   color: #0645ad;
   text-decoration: none;
 }
-
 .right-content a:hover {
   text-decoration: underline;
 }
 
-/* Lists in content */
+/* LISTS */
 .right-content ul,
 .right-content ol {
   margin: 0 0 1rem 1.3rem;
@@ -129,10 +127,10 @@ html, body {
 }
 
 .right-content li {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.35rem;
 }
 
-/* MOBILE – stack columns */
+/* MOBILE */
 @media (max-width: 900px) {
   .layout-2col {
     flex-direction: column;
@@ -141,12 +139,12 @@ html, body {
   .left-menu {
     width: 100%;
     border-right: none;
-    border-bottom: 1px solid #d4cbb8;
+    border-bottom: 1px solid #d8d1c2;
   }
 
   .right-content {
     width: 100%;
-    padding: 2rem 1.7rem 3rem 1.7rem;
+    padding: 2rem 1.7rem 3rem;
   }
 
   .right-content > * {
