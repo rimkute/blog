@@ -22,6 +22,9 @@
       <aside class="sidebar">
         <div class="site-title">
           <a href="{{ '/' | relative_url }}">Tarun Bhatt</a>
+          {% if page.url == '/' %}
+            <span class="slash">/</span> <!-- Show slash only on the homepage -->
+          {% endif %}
         </div>
 
         <nav class="sidebar-nav">
