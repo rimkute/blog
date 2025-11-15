@@ -1,6 +1,6 @@
-/* ----------------------------------------
-   GLOBAL
----------------------------------------- */
+/* ------------------------------
+   Base Page Styling
+------------------------------ */
 
 html, body {
   margin: 0;
@@ -8,157 +8,138 @@ html, body {
   font-family: "Roboto Condensed", sans-serif;
   line-height: 1.6;
   color: #2A2A2A;
-  background: #f5eee4;  /* your chosen background */
+  background: #f5eee4; /* Updated background color */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.site-wrapper {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 40px 80px 40px;
-}
+/* ------------------------------
+   Layout
+------------------------------ */
 
-/* ----------------------------------------
-   HEADER / NAME
----------------------------------------- */
-
-.site-header {
-  margin-bottom: 24px;
-}
-
-/* Option 1.5: bolder name + subtle underline on hover */
-.site-name {
-  display: inline-block;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: #2A2A2A;
-  text-decoration: none;
-  position: relative;
-  padding-bottom: 4px;
-}
-
-.site-name::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 1px;
-  width: 0;
-  background: #2A2A2A;
-  transition: width 0.3s ease;
-}
-
-.site-name:hover::after {
-  width: 100%;
-}
-
-/* ----------------------------------------
-   LAYOUT
----------------------------------------- */
-
-.layout {
+.wrapper {
   display: flex;
-  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 .sidebar {
   width: 260px;
+  padding-right: 40px;
 }
 
-.site-content {
-  flex: 1;
-  max-width: 760px;
+.content {
+  flex-grow: 1;
+  max-width: 780px;
 }
 
-/* ----------------------------------------
-   SIDEBAR MENU
----------------------------------------- */
+/* ------------------------------
+   Header / Name
+------------------------------ */
 
-.menu {
-  display: flex;
-  flex-direction: column;
-}
-
-.menu-item {
-  display: flex;
-  align-items: center;
-  padding: 10px 12px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid #CFC8BE;
-  text-decoration: none;
+.site-title {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
   color: #2A2A2A;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 15px;
-  font-weight: 300;
-  background: transparent;
+  text-decoration: none;
+}
 
+.site-title:hover {
+  color: #1a1a1a;
+  transition: color 0.25s ease;
+}
+
+/* ------------------------------
+   Navigation / Sidebar Menu
+------------------------------ */
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 8px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px 12px;
+  color: #2A2A2A;
+  text-decoration: none;
+  border-bottom: 1px solid #c9c1b8;
+  position: relative;
+
+  /* smooth animation */
   transition:
-    color 0.25s ease,
     background-color 0.25s ease,
-    letter-spacing 0.25s ease,
-    padding-left 0.25s ease;
+    padding-left 0.25s ease,
+    color 0.25s ease;
 }
 
-/* ARROW – starts hidden and slightly left */
-.menu-item .arrow {
-  margin-right: 6px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-6px);
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+/* Hover animation */
+.sidebar a:hover {
+  background-color: #e9dfd1;
+  padding-left: 16px;
+  color: #000;
 }
 
-/* ACTIVE ITEM */
-.menu-item.active {
-  background: #E8E3DC;
-  font-weight: 400;
+/* Active / current page styling */
+.sidebar a.active {
+  background-color: #e5dbcd;
+  padding-left: 16px;
+  font-weight: bold;
 }
 
-.menu-item.active .arrow {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0);
+/* Arrow for active link */
+.sidebar a.active::before {
+  content: "→";
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #2A2A2A;
 }
 
-/* HOVER EFFECT */
-.menu-item:hover {
-  color: #1D1D1D;
-  letter-spacing: 0.09em;
-  padding-left: 18px;
-}
+/* ------------------------------
+   Content Area Typography
+------------------------------ */
 
-/* ----------------------------------------
-   CONTENT TYPOGRAPHY
----------------------------------------- */
-
-.post-title {
-  font-size: 40px;
+h1, h2, h3, h4 {
+  font-weight: 500;
+  color: #2A2A2A;
   margin-top: 0;
-  margin-bottom: 22px;
-  font-weight: 400;
 }
 
-.site-content p {
-  font-size: 17px;
+p {
   margin-bottom: 20px;
+  font-size: 18px;
 }
 
-/* ----------------------------------------
-   RESPONSIVE
----------------------------------------- */
+/* Links inside content */
+.content a {
+  color: #2A2A2A;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
 
-@media (max-width: 800px) {
-  .layout {
-    flex-direction: column;
-    gap: 24px;
-  }
+.content a:hover {
+  color: #000;
+}
 
-  .sidebar {
-    width: 100%;
-  }
+/* ------------------------------
+   Footer (if added later)
+------------------------------ */
+
+footer {
+  margin-top: 60px;
+  font-size: 14px;
+  color: #666;
+  border-top: 1px solid #d8d0c8;
+  padding-top: 20px;
 }
