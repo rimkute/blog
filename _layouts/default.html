@@ -23,16 +23,19 @@
 <body>
   <div class="site-wrapper">
 
-    <!-- Header Section without the title -->
+    <!-- Header Section -->
     <header class="site-header">
-      <nav class="site-nav">
-        <a href="{{ "/" | relative_url }}">Home</a>
-        <a href="{{ "/about/" | relative_url }}">About</a>
-      </nav>
+      <a href="{{ "/" | relative_url }}" class="site-name">{{ site.title }}</a>
+      {% if page.url != "/" %}
+        <nav class="site-nav">
+          <a href="{{ "/" | relative_url }}">Home</a>
+          <a href="{{ "/about/" | relative_url }}">About</a>
+        </nav>
+      {% endif %}
     </header>
 
     <div class="layout">
-      <!-- Sidebar Section with the site title -->
+      <!-- Sidebar Section -->
       <aside class="sidebar">
         <div class="site-title">
           <a href="{{ '/' | relative_url }}">Tarun Bhatt</a>
