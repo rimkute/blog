@@ -57,12 +57,6 @@ ul {
   display: block;
 }
 
-.site-title .slash {
-  font-size: 24px; /* Same size as the title */
-  color: #888; /* Lighter color for the slash */
-  margin-left: 10px;
-}
-
 /* Sidebar Navigation */
 .sidebar-nav ul {
   list-style-type: none;
