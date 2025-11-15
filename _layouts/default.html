@@ -11,35 +11,48 @@
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Site CSS -->
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
 
-  <!-- Font: Roboto Condensed for menu & headings -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;600&display=swap" rel="stylesheet">
-
+  <!-- Roboto Condensed for headings/menu -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="layout-2col">
+  <div class="layout">
 
-    <!-- LEFT COLUMN: MENU -->
-    <aside class="left-menu">
-      <div class="left-title">{{ site.title }} /</div>
+    <!-- LEFT COLUMN: SIDEBAR -->
+    <aside>
+      <div class="sidebar-title">
+        {{ site.title }} /
+      </div>
 
-      <ul class="left-list">
+      <ul class="sidebar-list">
 
-        <!-- ABOUT behaves as home -->
-        {% assign on_home = page.url == "/" %}
-        <li class="left-item">
-          <a href="{{ "/" | relative_url }}"
-             class="left-link{% if on_home %} left-link-active{% endif %}">
-            {% if on_home %}-&gt; {% endif %}ABOUT
+        {%- assign on_home = page.url == "/" -%}
+        <li class="sidebar-item{% if on_home %} active{% endif %}">
+          <a href="{{ "/" | relative_url }}" class="sidebar-link">
+            About
           </a>
         </li>
 
-        <!-- LOOP THROUGH POSTS -->
-        {% for post in site.posts %}
-          {% assign active = post.url == page.url %}
-          <li class="left-item">
-            <a href="{{ post.url | relative_url }}"
-               cla
+        {%- for post in site.posts -%}
+          {%- assign is_current = post.url == page.url -%}
+          <li class="sidebar-item{% if is_current %} active{% endif %}">
+            <a href="{{ post.url | relative_url }}" class="sidebar-link">
+              {{ post.title }}
+            </a>
+          </li>
+        {%- endfor -%}
+
+      </ul>
+    </aside>
+
+    <!-- RIGHT COLUMN: CONTENT -->
+    <main class="site-content">
+      {{ content }}
+    </main>
+
+  </div>
+</body>
+</html>
