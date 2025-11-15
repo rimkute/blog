@@ -23,13 +23,16 @@
 <body>
   <div class="site-wrapper">
 
-    <!-- Header Section without Tarun Bhatt -->
+    <!-- Header Section without the "Tarun Bhatt" title -->
     <header class="site-header">
-      <a href="{{ "/" | relative_url }}" class="site-name">{{ site.title }}</a>
+      <nav class="site-nav">
+        <a href="{{ "/" | relative_url }}">Home</a>
+        <a href="{{ "/about/" | relative_url }}">About</a>
+      </nav>
     </header>
 
     <div class="layout">
-      <!-- Sidebar Section with Tarun Bhatt -->
+      <!-- Sidebar Section with "Tarun Bhatt" -->
       <aside class="sidebar">
         <div class="site-title">
           <a href="{{ '/' | relative_url }}">Tarun Bhatt</a>
