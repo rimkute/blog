@@ -1,7 +1,9 @@
 ---
-layout: default
+layout: post
 title: "About"
+date: 2025-11-12
 permalink: /about/
+ategory: general
 ---
 
 I work on AI/ML, business operations, and manufacturing innovation.
