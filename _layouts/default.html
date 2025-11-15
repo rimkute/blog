@@ -10,8 +10,13 @@
     {% endif %}
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Site CSS -->
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;600&display=swap">
+
+  <!-- Font: Roboto Condensed for menu & headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -22,31 +27,19 @@
       <div class="left-title">{{ site.title }} /</div>
 
       <ul class="left-list">
+
+        <!-- ABOUT behaves as home -->
         {% assign on_home = page.url == "/" %}
         <li class="left-item">
           <a href="{{ "/" | relative_url }}"
              class="left-link{% if on_home %} left-link-active{% endif %}">
-            {% if on_home %}-&gt; {% endif %}About
+            {% if on_home %}-&gt; {% endif %}ABOUT
           </a>
         </li>
 
+        <!-- LOOP THROUGH POSTS -->
         {% for post in site.posts %}
-          {% assign is_current_post = post.url == page.url %}
+          {% assign active = post.url == page.url %}
           <li class="left-item">
             <a href="{{ post.url | relative_url }}"
-               class="left-link{% if is_current_post %} left-link-active{% endif %}">
-              {% if is_current_post %}-&gt; {% endif %}{{ post.title }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </aside>
-
-    <!-- RIGHT COLUMN: CONTENT -->
-    <main class="right-content">
-      {{ content }}
-    </main>
-
-  </div>
-</body>
-</html>
+               cla
