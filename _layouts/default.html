@@ -11,6 +11,7 @@
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;600&display=swap">
 </head>
 
 <body>
@@ -21,16 +22,14 @@
       <div class="left-title">{{ site.title }} /</div>
 
       <ul class="left-list">
-        <!-- About link -->
-        {% assign on_about = page.url == "/about/" %}
+        {% assign on_home = page.url == "/" %}
         <li class="left-item">
-          <a href="{{ "/about/" | relative_url }}"
-             class="left-link{% if on_about %} left-link-active{% endif %}">
-            {% if on_about %}-&gt; {% endif %}About
+          <a href="{{ "/" | relative_url }}"
+             class="left-link{% if on_home %} left-link-active{% endif %}">
+            {% if on_home %}-&gt; {% endif %}About
           </a>
         </li>
 
-        <!-- All posts -->
         {% for post in site.posts %}
           {% assign is_current_post = post.url == page.url %}
           <li class="left-item">
