@@ -1,83 +1,176 @@
-/* GLOBAL PAGE SETTINGS */
-body {
-    margin: 0;
-    padding: 0;
-    background: #f5eee4;
-    font-family: 'Roboto Mono', monospace;
-    color: #2d2926;
+/* ------------------------------
+   Base Page Styling
+------------------------------ */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 1.6;
+  color: #2A2A2A;
+  background: #f5eee4; /* your chosen background */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* LAYOUT CONTAINER */
-.container {
-    display: flex;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 60px 40px;
+/* ------------------------------
+   Layout
+------------------------------ */
+
+.wrapper {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 40px 80px 40px;
 }
 
-/* SIDEBAR */
 .sidebar {
-    width: 260px;
-    padding-right: 40px;
+  width: 260px;
+  padding-right: 40px;
+  border-right: 1px solid #c9c1b8;
 }
 
-/* SITE TITLE */
-.site-title {
-    font-size: 28px;
-    font-weight: 500;
-    color: #2d2926;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-}
-
-/* NAVIGATION */
-.nav ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 30px;
-}
-
-.nav li {
-    margin-bottom: 12px;
-}
-
-/* LINKS */
-.nav a {
-    display: block;
-    padding: 12px 14px;
-    text-decoration: none;
-    color: #2d2926;
-    border-bottom: 1px solid #2d2926;
-    transition: color 0.25s ease, background 0.25s ease;
-}
-
-/* HOVER EFFECT */
-.nav a:hover {
-    background: rgba(0, 0, 0, 0.05);
-    color: #000;
-}
-
-/* ACTIVE (HIGHLIGHT CURRENT PAGE) */
-.nav li.active a {
-    background: rgba(0, 0, 0, 0.10);
-    font-weight: 500;
-}
-
-/* MAIN CONTENT AREA */
 .content {
-    flex: 1;
-    padding-left: 40px;
+  flex-grow: 1;
+  max-width: 780px;
+  padding-left: 60px;
 }
 
-/* TITLES */
-h1 {
-    font-size: 38px;
-    font-weight: 500;
-    margin-top: 0;
+/* ------------------------------
+   Header / Name
+------------------------------ */
+
+.site-title {
+  display: inline-block;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  margin-bottom: 24px;
+  color: #2A2A2A;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
 }
 
-/* PARAGRAPHS */
-p {
-    font-size: 18px;
-    line-height: 1.65;
+/* subtle underline on hover */
+.site-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background: #2A2A2A;
+  transition: width 0.3s ease;
+}
+
+.site-title:hover::after {
+  width: 100%;
+}
+
+/* ------------------------------
+   Navigation / Sidebar Menu
+------------------------------ */
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0 0;
+}
+
+.sidebar li {
+  margin-bottom: 4px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px 14px;
+  color: #2A2A2A;
+  text-decoration: none;
+  border-bottom: 1px solid #c9c1b8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 14px;
+  font-weight: 300;
+  transition:
+    background-color 0.25s ease,
+    padding-left 0.25s ease,
+    color 0.25s ease;
+}
+
+/* Hover animation */
+.sidebar a:hover {
+  background-color: #e9dfd1;
+  padding-left: 20px;
+  color: #000;
+}
+
+/* Active / current page styling */
+.sidebar li.active a {
+  background-color: #e5dbcd;
+  padding-left: 20px;
+  font-weight: 500;
+  position: relative;
+}
+
+/* Arrow for active link */
+.sidebar li.active a::before {
+  content: "→";
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #2A2A2A;
+}
+
+/* ------------------------------
+   Content Area Typography
+------------------------------ */
+
+.content h1 {
+  font-weight: 500;
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.content p {
+  margin-bottom: 18px;
+  font-size: 17px;
+}
+
+/* Links inside content */
+.content a {
+  color: #2A2A2A;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.content a:hover {
+  color: #000;
+}
+
+/* ------------------------------
+   Responsive
+------------------------------ */
+
+@media (max-width: 800px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #c9c1b8;
+    padding-right: 0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    padding-left: 0;
+  }
 }
