@@ -23,7 +23,22 @@ ul {
   list-style: none;
 }
 
-/* Sidebar Styling */
+/* Main Layout Styling */
+.layout {
+  display: flex;
+  flex-direction: row;  /* Two-column layout */
+  margin: 20px;
+  gap: 20px;
+  flex-wrap: wrap;  /* Allow layout to wrap for smaller screens */
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
 .sidebar {
   width: 320px; /* Increased width for sidebar */
   background-color: transparent;  /* Set to transparent */
@@ -37,7 +52,7 @@ ul {
   font-size: 24px; /* Adjusted size */
   font-weight: 400; /* Normal weight */
   color: #333; /* Adjust color */
-  letter-spacing: 0.5px;
+  letter-spacing: 0.5px; /* Optional, for spacing */
   margin-bottom: 20px;
   display: block;
 }
@@ -137,14 +152,14 @@ ul {
   margin-bottom: 22px;
 }
 
-/* Footer Styles */
-.site-footer {
+/* Removed Footer Styling */
+/* .site-footer {
   background: #f5eee4;
   padding: 20px 0;
   text-align: center;
   font-size: 14px;
   color: #333;
-}
+} */
 
 /* Responsive Styles */
 @media (max-width: 900px) {
