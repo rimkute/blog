@@ -6,5 +6,5 @@ baseurl: ""
 markdown: kramdown
 highlighter: rouge
 
-# Removed global permalink setting as you want to define it in each post's front matter
+permalink: /:title/
 future: false
