@@ -40,12 +40,12 @@ ul {
 
 /* Sidebar Styles */
 .sidebar {
-  width: 260px; /* Adjusted width of sidebar */
+  width: 230px; /* Adjusted width of sidebar */
   background-color: #fff;
-  border-right: 1px solid #cfc4b4;
+  border-right: 1px solid #d8d8d8;  /* Light gray border for separation */
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0; /* Prevent shrinking of sidebar */
+  flex-shrink: 0;  /* Prevent shrinking */
 }
 
 .site-title a {
@@ -63,37 +63,41 @@ ul {
   margin-left: 10px;
 }
 
-.site-title a.active {
-  font-weight: 400; /* Normal weight for active state */
-  color: #333; /* Color remains the same */
+/* Sidebar Navigation */
+.sidebar-nav ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
 }
 
-.sidebar-nav ul {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.sidebar-nav li {
+  margin-bottom: 10px;
 }
 
 .sidebar-nav a {
-  padding: 12px 10px;
+  padding: 8px 10px;
   display: block;
-  border-bottom: 1px solid #d8cfc2;
-  font-size: 16px; /* Adjusted font size for sidebar links */
+  font-size: 16px; /* Smaller font size for sidebar links */
   font-weight: 400; /* Normal weight */
-  color: #3a3a3a;
-  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #555;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-left: 4px solid transparent;  /* Subtle border for active links */
 }
 
+/* Hover Effect for Links */
 .sidebar-nav a:hover {
-  background: #efe6db;
+  background-color: #f0f0f0;
+  color: #333;
 }
 
+/* Active Link Styling */
 .sidebar-nav li.active a {
-  background: #e9dfd3;
-  font-weight: 700;
-  border-left: 4px solid #b8a898;
-  padding-left: 12px;
+  background-color: #e9dfd3;
+  font-weight: 600;
+  color: #333;
+  border-left: 4px solid #b8a898;  /* Highlight active link with border */
 }
 
 /* Main Content Styles */
@@ -155,12 +159,11 @@ ul {
   .sidebar {
     width: 100%;
     border-right: none;
-    border-bottom: 1px solid #cfc4b4;
-    padding-bottom: 20px;
+    border-bottom: 1px solid #d8d8d8;
     margin-bottom: 20px;
   }
 
   .sidebar-nav a {
-    border-bottom: 1px solid #cfc4b4;
+    border-bottom: 1px solid #d8d8d8;
   }
 }
