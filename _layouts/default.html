@@ -21,33 +21,31 @@
 <body>
   <div class="layout">
 
-    <!-- LEFT SIDEBAR ------------------------------------------------>
+    <!-- LEFT SIDEBAR -->
     <aside>
       <div class="sidebar-title">
         <a href="{{ "/" | relative_url }}" class="site-title-link">{{ site.title }} /</a>
       </div>
 
       <ul class="sidebar-list">
-
-        <!-- ABOUT (no arrow ever) -->
+        <!-- ABOUT: displays on every page, never gets an arrow -->
         <li class="sidebar-item">
           <a href="{{ "/about/" | relative_url }}" class="sidebar-link">ABOUT</a>
         </li>
 
-        <!-- POSTS (arrow only on active post) -->
+        <!-- POSTS: only active post gets the arrow -->
         {% for post in site.posts %}
-          {% assign is_current = (page.layout == "post") and (post.url == page.url) %}
+          {% assign is_current = (post.id == page.id) %}
           <li class="sidebar-item{% if is_current %} active{% endif %}">
             <a href="{{ post.url | relative_url }}" class="sidebar-link">
               {{ post.title }}
             </a>
           </li>
         {% endfor %}
-
       </ul>
     </aside>
 
-    <!-- RIGHT CONTENT ---------------------------------------------->
+    <!-- RIGHT COLUMN CONTENT -->
     <main class="site-content">
       {{ content }}
     </main>
