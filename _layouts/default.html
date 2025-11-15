@@ -32,12 +32,6 @@
     </header>
 
     <div class="layout">
-      
-      <!-- Main Content Area -->
-      <main class="site-content">
-        {{ content }}
-      </main>
-
       <!-- Sidebar Section -->
       <aside class="sidebar">
         <div class="site-title">
@@ -47,12 +41,10 @@
 
         <nav class="sidebar-nav">
           <ul>
-            <!-- Highlight active page in sidebar -->
             <li class="{% if page.url == '/' %}active{% endif %}">
               <a href="{{ '/' | relative_url }}">About</a>
             </li>
 
-            <!-- Loop through posts and display them in sidebar -->
             {% assign sorted_posts = site.posts | sort: "date" | reverse %}
             {% for post in sorted_posts %}
             <li class="{% if page.url == post.url %}active{% endif %}">
@@ -63,6 +55,10 @@
         </nav>
       </aside>
 
+      <!-- Main Content Area -->
+      <main class="site-content">
+        {{ content }}
+      </main>
     </div>
 
     <!-- Footer Section -->
