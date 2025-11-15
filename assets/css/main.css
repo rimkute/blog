@@ -7,7 +7,7 @@ html, body {
   background: #F5F0E9;
   color: #3c3934;
   font-weight: 300;
-  font-size: 17px; /* +1 size */
+  font-size: 17px; /* +1 size for readability */
 }
 
 /* GRID LAYOUT ------------------------------------------------------- */
@@ -24,7 +24,7 @@ html, body {
 /* SIDEBAR TITLE ----------------------------------------------------- */
 
 .sidebar-title {
-  font-size: 29px;  /* 28 + 1 */
+  font-size: 29px;
   font-weight: 300;
   letter-spacing: 0.04em;
   margin-bottom: 28px;
@@ -59,13 +59,13 @@ html, body {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  font-size: 15px; /* 14 + 1 */
+  font-size: 15px;
   font-weight: 300;
   color: #3c3934;
   border-bottom: 1px solid #3c3934;
 }
 
-/* ACTIVE ITEM: ONLY POST BEING READ GETS THIS ---------------------- */
+/* ACTIVE ITEM: ONLY THE CURRENT POST ------------------------------- */
 
 .sidebar-item.active .sidebar-link {
   font-weight: 400;
@@ -85,7 +85,7 @@ html, body {
 /* POST TITLE -------------------------------------------------------- */
 
 .post-title {
-  font-size: 33px; /* 32 + 1 */
+  font-size: 33px;
   font-weight: 400;
   letter-spacing: -0.01em;
   margin-bottom: 24px;
@@ -94,7 +94,7 @@ html, body {
 /* POST BODY --------------------------------------------------------- */
 
 .post-body p {
-  font-size: 17px; /* 16 + 1 */
+  font-size: 17px;
   font-weight: 300;
   line-height: 1.55;
   letter-spacing: -0.005em;
@@ -106,12 +106,12 @@ html, body {
   text-decoration: underline;
 }
 
-/* FOOTNOTES (IF YOU ADD THEM LATER) -------------------------------- */
+/* FOOTNOTES (OPTIONAL) --------------------------------------------- */
 
 .footnotes {
   margin-top: 40px;
   border-top: 1px solid #3c3934;
   padding-top: 20px;
-  font-size: 13px; /* 12 + 1 */
+  font-size: 13px;
   color: #6a655d;
 }
