@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+  <meta charset="utf-8">
+  <title>
+    {% if page.title %}
+      {{ page.title }} | {{ site.title }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if site.description %}
+  <meta name="description" content="{{ site.description }}">
+  {% endif %}
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
 </head>
 <body>
-    <header>
-        <a href="/">{{ site.title }}</a> /
+  <div class="site-wrapper">
+    <header class="site-header">
+      <a href="{{ "/" | relative_url }}" class="site-name">{{ site.title }}</a>
+      <nav class="site-nav">
+        <a href="{{ "/about/" | relative_url }}">About</a>
+      </nav>
     </header>
-    
-    {{ content }}
+
+    <main class="site-content">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+    </footer>
+  </div>
 </body>
 </html>
