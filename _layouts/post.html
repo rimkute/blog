@@ -1,9 +1,49 @@
----
-layout: default
----
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} • {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  </head>
 
-<h1 class="post-title">{{ page.title }}</h1>
+  <body>
 
-<div class="post-body">
-  {{ content }}
-</div>
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h1 class="site-title">
+          <a href="{{ "/" | relative_url }}">Tarun Bhatt</a>
+          <span class="slash">/</span>
+        </h1>
+
+        <nav class="sidebar-nav">
+          <ul>
+            <!-- ABOUT -->
+            <li class="{% if page.url == '/about/' %}active{% endif %}">
+              <a href="{{ '/about/' | relative_url }}">ABOUT</a>
+            </li>
+
+            <!-- LOOP ALL POSTS -->
+            {% assign sorted_posts = site.posts | sort: 'title' %}
+            {% for post in sorted_posts %}
+              <li class="{% if page.url == post.url %}active{% endif %}">
+                <a href="{{ post.url | relative_url }}">{{ post.title | upcase }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="content">
+        <h2 class="page-title">{{ page.title }}</h2>
+
+        <article class="post-content">
+          {{ content }}
+        </article>
+      </main>
+    </div>
+
+  </body>
+</html>
