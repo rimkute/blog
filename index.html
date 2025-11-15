@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<nav class="post-nav">
+    <ul>
+        <li><a href="/">About</a></li>
+        {% for post in site.posts %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+
+<h1>About</h1>
+
+<p>I'm interested in AI/ML, business operations, and manufacturing innovation.</p>
+
+<p>Email: <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>

@@ -1,0 +1,26 @@
+# Site settings
+title: "Tarun Bhatt"
+description: ""
+baseurl: ""
+url: "https://blog.belmanco.com"
+
+# Build settings
+markdown: kramdown
+permalink: /:title.html
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+# Minimal setup
+plugins: []
+show_excerpts: false
+theme: null
+
+# Author info
+author:
+  name: "Tarun Bhatt"
+  email: "blog@belmanco.com"
