@@ -11,10 +11,7 @@
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="{{ "/assets/css/main.css?v=3" | relative_url }}">
-
-  <!-- Roboto Condensed font -->
+  <link rel="stylesheet" href="{{ "/assets/css/main.css?v=4" | relative_url }}">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
@@ -28,15 +25,14 @@
       </div>
 
       <ul class="sidebar-list">
-        <!-- ABOUT: always visible, never gets arrow -->
+        <!-- ABOUT: static, never gets arrow -->
         <li class="sidebar-item">
           <a href="{{ "/about/" | relative_url }}" class="sidebar-link">ABOUT</a>
         </li>
 
-        <!-- POSTS: arrow only on the post whose title matches page.title -->
+        <!-- POSTS: JS will decide which one is active -->
         {% for post in site.posts %}
-          {% assign is_current = (page.title == post.title) %}
-          <li class="sidebar-item{% if is_current %} active{% endif %}">
+          <li class="sidebar-item" data-type="post">
             <a href="{{ post.url | relative_url }}" class="sidebar-link">
               {{ post.title }}
             </a>
@@ -45,11 +41,38 @@
       </ul>
     </aside>
 
-    <!-- RIGHT COLUMN CONTENT -->
+    <!-- RIGHT COLUMN -->
     <main class="site-content">
       {{ content }}
     </main>
 
   </div>
+
+  <!-- JS: highlight current post in sidebar ------------------------- -->
+  <script>
+    (function() {
+      var path = window.location.pathname.replace(/\/+$/, ""); // remove trailing slash
+
+      var links = document.querySelectorAll(".sidebar-list a.sidebar-link");
+      links.forEach(function(link) {
+        var href = link.getAttribute("href");
+
+        // Normalize href to pathname-only and remove trailing slash
+        var linkPath = href.replace(window.location.origin, "").replace(/\/+$/, "");
+
+        // Skip ABOUT link explicitly
+        if (/\/about\/?$/.test(linkPath)) {
+          return;
+        }
+
+        if (linkPath === path) {
+          var li = link.closest("li.sidebar-item");
+          if (li) {
+            li.classList.add("active");
+          }
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
