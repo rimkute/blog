@@ -13,7 +13,6 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Layout wrapper */
 .site-wrapper {
   display: flex;
   max-width: 1100px;
@@ -42,7 +41,6 @@ html, body {
   flex-direction: column;
 }
 
-/* each link */
 .menu-item {
   padding: 10px 12px;
   border-bottom: 1px solid #CFC8BE;
@@ -51,7 +49,6 @@ html, body {
   display: block;
   position: relative;
 
-  /* ultra-smooth animation */
   transition:
     color 0.25s ease,
     background-color 0.25s ease,
@@ -59,45 +56,43 @@ html, body {
     padding-left 0.25s ease;
 }
 
-/* arrow always present but hidden unless active */
+/* ----------------------------------------
+   ARROW (with slide-in animation)
+---------------------------------------- */
+
 .menu-item .arrow {
   margin-right: 6px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+
+  /* NEW animation */
+  transform: translateX(-6px);  /* starts left */
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
-/* ----------------------------------------
-   ACTIVE ITEM (highlight)
----------------------------------------- */
-
+/* active state */
 .menu-item.active {
   background: #E8E3DC;
 }
 
-/* arrow visible on active link */
+/* arrow appears + slides in */
 .menu-item.active .arrow {
   opacity: 1;
   visibility: visible;
-  transform: translateX(0px);
+  transform: translateX(0px); /* slides into final position */
 }
 
 /* ----------------------------------------
-   HOVER EFFECT (RKG style + smoother)
+   HOVER EFFECTS (smooth premium feel)
 ---------------------------------------- */
 
 .menu-item:hover {
-  color: #1D1D1D;               /* subtle darken */
-  letter-spacing: 0.3px;        /* subtle tighten */
-  padding-left: 16px;           /* smooth slide-right effect */
+  color: #1D1D1D;
+  letter-spacing: 0.3px;
+  padding-left: 16px;
 }
-
-/* optional: fade-in arrow on hover too (commented out since RKG doesn’t use it)
-.menu-item:hover .arrow {
-  opacity: 0.35;
-  visibility: visible;
-}
-*/
 
 /* ----------------------------------------
    MAIN CONTENT
@@ -121,8 +116,9 @@ p {
 }
 
 /* ----------------------------------------
-   CLEAN ABOUT PAGE HEADER
+   ABOUT HEADER
 ---------------------------------------- */
+
 .sidebar-section-title {
   font-size: 14px;
   letter-spacing: 0.5px;
@@ -136,7 +132,7 @@ p {
 }
 
 /* ----------------------------------------
-   FOOTER (simple)
+   FOOTER
 ---------------------------------------- */
 
 .site-footer {
