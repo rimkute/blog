@@ -1,102 +1,148 @@
-/* GLOBAL LAYOUT + FONTS */
+/* ----------------------------------------
+   GLOBAL
+---------------------------------------- */
+
 html, body {
   margin: 0;
   padding: 0;
-  background: #F5F1EB;
-  font-family: "Roboto Condensed", "Helvetica Neue", Arial, sans-serif;
-  font-size: 17px;
-  line-height: 1.55;
-  color: #2D2926;
-  background: #f5eee4; /* ← lighter background */
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 1.6;
+  color: #2A2A2A;
+  background: #f5eee4; /* your chosen background */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Layout wrapper */
 .site-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 2rem;
-}
-
-.site-header {
-  margin-bottom: 2rem;
-}
-
-.site-name {
-  font-size: 32px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: #2D2926;
-}
-
-/* Remove underline on hover */
-.site-name:hover {
-  text-decoration: none;
-}
-
-/* SIDEBAR */
-.layout {
   display: flex;
-  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 40px 80px 40px;
 }
+
+/* ----------------------------------------
+   SIDEBAR
+---------------------------------------- */
 
 .sidebar {
-  width: 260px;
+  width: 270px;
+  padding-right: 40px;
+  font-size: 15px;
 }
 
-.menu {
+.sidebar-section {
+  margin-bottom: 18px;
+  font-weight: 600;
+  color: #5A5A5A;
+}
+
+.menu-list {
   display: flex;
   flex-direction: column;
 }
 
+/* each link */
 .menu-item {
   padding: 10px 12px;
-  margin-bottom: 4px;
+  border-bottom: 1px solid #CFC8BE;
   text-decoration: none;
-  font-size: 15px;
-  letter-spacing: 0.5px;
-  color: #2D2926;
-  border-bottom: 1px solid #2D2926;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  color: #2A2A2A;
+  display: block;
+  position: relative;
+
+  /* ultra-smooth animation */
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    letter-spacing 0.25s ease,
+    padding-left 0.25s ease;
 }
 
-/* ARROW ALWAYS PRESENT BUT DIM */
+/* arrow always present but hidden unless active */
 .menu-item .arrow {
-  visibility: hidden;
+  margin-right: 6px;
   opacity: 0;
-  transition: all 0.15s ease;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* ACTIVE STATE (Option C highlight) */
+/* ----------------------------------------
+   ACTIVE ITEM (highlight)
+---------------------------------------- */
+
 .menu-item.active {
-  background: #E8E3DC;          /* ← Option C */
+  background: #E8E3DC;
 }
 
-/* Arrow becomes visible only on active item */
+/* arrow visible on active link */
 .menu-item.active .arrow {
-  visibility: visible;
   opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
 }
 
-/* CONTENT AREA */
-.content {
+/* ----------------------------------------
+   HOVER EFFECT (RKG style + smoother)
+---------------------------------------- */
+
+.menu-item:hover {
+  color: #1D1D1D;               /* subtle darken */
+  letter-spacing: 0.3px;        /* subtle tighten */
+  padding-left: 16px;           /* smooth slide-right effect */
+}
+
+/* optional: fade-in arrow on hover too (commented out since RKG doesn’t use it)
+.menu-item:hover .arrow {
+  opacity: 0.35;
+  visibility: visible;
+}
+*/
+
+/* ----------------------------------------
+   MAIN CONTENT
+---------------------------------------- */
+
+.site-content {
   flex: 1;
-  max-width: 800px;
+  max-width: 750px;
 }
 
-.content h1, .content h2, .content h3 {
-  font-weight: 400;
+.post-title {
+  font-size: 44px;
   margin-top: 0;
-  letter-spacing: 1px;
+  margin-bottom: 28px;
+  font-weight: 500;
 }
 
-/* RESPONSIVE */
-@media (max-width: 800px) {
-  .layout {
-    flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-  }
+p {
+  font-size: 18px;
+  margin-bottom: 22px;
+}
+
+/* ----------------------------------------
+   CLEAN ABOUT PAGE HEADER
+---------------------------------------- */
+.sidebar-section-title {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  color: #5A5A5A;
+  transition: color 0.2s ease;
+}
+
+.sidebar-section-title:hover {
+  color: #1e1e1e;
+}
+
+/* ----------------------------------------
+   FOOTER (simple)
+---------------------------------------- */
+
+.site-footer {
+  margin-top: 60px;
+  font-size: 13px;
+  color: #777;
+  border-top: 1px solid #d9d3cb;
+  padding-top: 12px;
 }
