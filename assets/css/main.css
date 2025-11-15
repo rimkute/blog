@@ -69,3 +69,87 @@ html, body {
 
 /* RIGHT CONTENT COLUMN */
 .right-content {
+  width: 68%;
+  padding: 3rem 3.2rem 4rem 3.2rem;
+  box-sizing: border-box;
+}
+
+/* Limit text width like an essay column */
+.right-content > * {
+  max-width: 44rem;            /* ~660px */
+}
+
+/* Headings on right – tall condensed, airy tracking */
+.right-content h1,
+.right-content h2,
+.right-content h3 {
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  letter-spacing: 0.09em;
+  color: #222;
+}
+
+.right-content h1 {
+  font-size: 2.15rem;          /* ~32px */
+  font-weight: 400;
+  margin: 0 0 1.25rem 0;
+}
+
+.right-content h2 {
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin: 1.8rem 0 0.9rem 0;
+}
+
+.right-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.4rem 0 0.7rem 0;
+}
+
+/* Paragraphs – classic essay feel */
+.right-content p {
+  margin: 0 0 0.95rem 0;
+}
+
+/* Links inside content */
+.right-content a {
+  color: #0645ad;
+  text-decoration: none;
+}
+
+.right-content a:hover {
+  text-decoration: underline;
+}
+
+/* Lists in content */
+.right-content ul,
+.right-content ol {
+  margin: 0 0 1rem 1.3rem;
+  padding: 0;
+}
+
+.right-content li {
+  margin-bottom: 0.3rem;
+}
+
+/* MOBILE – stack columns */
+@media (max-width: 900px) {
+  .layout-2col {
+    flex-direction: column;
+  }
+
+  .left-menu {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #d4cbb8;
+  }
+
+  .right-content {
+    width: 100%;
+    padding: 2rem 1.7rem 3rem 1.7rem;
+  }
+
+  .right-content > * {
+    max-width: 100%;
+  }
+}
