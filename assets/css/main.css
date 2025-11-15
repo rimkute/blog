@@ -1,121 +1,101 @@
-/* GLOBAL ------------------------------------------------------------ */
-
+/* GLOBAL LAYOUT + FONTS */
 html, body {
   margin: 0;
   padding: 0;
+  background: #F5F1EB;
   font-family: "Roboto Condensed", "Helvetica Neue", Arial, sans-serif;
-  background: #F5F0E9;
-  color: #3c3934;
-  font-weight: 300;
   font-size: 17px;
-}
-
-/* GRID LAYOUT ------------------------------------------------------- */
-
-.layout {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 60px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 40px 60px;
-}
-
-/* SIDEBAR TITLE ----------------------------------------------------- */
-
-.sidebar-title {
-  font-size: 29px;
-  font-weight: 300;
-  letter-spacing: 0.04em;
-  margin-bottom: 28px;
-}
-
-/* CLICKABLE SITE TITLE (NO UNDERLINE) ------------------------------ */
-
-.site-title-link {
-  color: inherit;
-  text-decoration: none !important;
-}
-
-.site-title-link:hover {
-  text-decoration: none !important;
-}
-
-/* SIDEBAR LIST ------------------------------------------------------ */
-
-.sidebar-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar-item {
-  margin: 0 0 8px 0;
-}
-
-.sidebar-link {
-  display: block;
-  padding: 6px 0;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 15px;
-  font-weight: 300;
-  color: #3c3934;
-  border-bottom: 1px solid #3c3934;
-}
-
-/* ACTIVE ITEM HIGHLIGHT (controlled by JS) ------------------------- */
-/* 1) Arrow to the left
-   2) Slightly bolder weight
-   3) Light background so it's obvious even without the arrow        */
-
-.sidebar-item.active .sidebar-link {
-  font-weight: 400;
-  background-color: rgba(0, 0, 0, 0.03);
-}
-
-.sidebar-item.active .sidebar-link::before {
-  content: "→ ";
-  font-weight: 400;
-}
-
-/* RIGHT COLUMN CONTENT --------------------------------------------- */
-
-.site-content {
-  max-width: 780px;
-}
-
-/* POST TITLE -------------------------------------------------------- */
-
-.post-title {
-  font-size: 33px;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  margin-bottom: 24px;
-}
-
-/* POST BODY --------------------------------------------------------- */
-
-.post-body p {
-  font-size: 17px;
-  font-weight: 300;
   line-height: 1.55;
-  letter-spacing: -0.005em;
-  margin-bottom: 20px;
+  color: #2D2926;
 }
 
-.post-body a {
-  color: #3c3934;
-  text-decoration: underline;
+.site-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
 }
 
-/* FOOTNOTES (OPTIONAL) --------------------------------------------- */
+.site-header {
+  margin-bottom: 2rem;
+}
 
-.footnotes {
-  margin-top: 40px;
-  border-top: 1px solid #3c3934;
-  padding-top: 20px;
-  font-size: 13px;
-  color: #6a655d;
+.site-name {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #2D2926;
+}
+
+/* Remove underline on hover */
+.site-name:hover {
+  text-decoration: none;
+}
+
+/* SIDEBAR */
+.layout {
+  display: flex;
+  gap: 60px;
+}
+
+.sidebar {
+  width: 260px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: #2D2926;
+  border-bottom: 1px solid #2D2926;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ARROW ALWAYS PRESENT BUT DIM */
+.menu-item .arrow {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.15s ease;
+}
+
+/* ACTIVE STATE (Option C highlight) */
+.menu-item.active {
+  background: #E8E3DC;          /* ← Option C */
+}
+
+/* Arrow becomes visible only on active item */
+.menu-item.active .arrow {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* CONTENT AREA */
+.content {
+  flex: 1;
+  max-width: 800px;
+}
+
+.content h1, .content h2, .content h3 {
+  font-weight: 400;
+  margin-top: 0;
+  letter-spacing: 1px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  .layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+  }
 }
