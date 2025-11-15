@@ -1,11 +1,7 @@
 ---
-layout: post
+layout: default
 title: "Machine Learning"
 permalink: /machine-learning/
+category: machine-learning
 ---
-
-This is my first post.
-
-I’m starting this blog to share thoughts on business operations, AI/ML applications, and neural networks.
-
-More to come.
+Your post content here.
