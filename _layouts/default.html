@@ -27,10 +27,12 @@
 
         <nav class="sidebar-nav">
           <ul>
-            <li class="{% if page.url == '/' %}active{% endif %}">
-              <a href="{{ '/' | relative_url }}">About</a>
+            <!-- About Link: Highlight when on the About page -->
+            <li class="{% if page.url == '/about/' %}active{% endif %}">
+              <a href="{{ '/about/' | relative_url }}">About</a>
             </li>
 
+            <!-- Loop through the blog posts -->
             {% assign sorted_posts = site.posts | sort: "date" | reverse %}
             {% for post in sorted_posts %}
               <li class="{% if page.url == post.url %}active{% endif %}">
