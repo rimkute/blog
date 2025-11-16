@@ -4,7 +4,12 @@ title: "Tarun"
 date: 2020-01-01 12:00:00
 category: general
 ---
-![Venn diagram of AI, security, and supply chain converging over a glowing node on a chip](assets/convergence-main.png)
+<p align="center">
+  <img src="assets/convergence-main.png"
+       alt="Venn diagram of AI, security, and supply chain converging over a glowing node on a chip"
+       width="480"
+       style="max-width: 100%; height: auto;">
+</p>
 
 I am a technical CEO, operator, and systems builder focused on AI security, critical minerals, and industrial manufacturing and supply chains.
 
