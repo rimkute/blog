@@ -5,6 +5,7 @@ date: 2025-11-01 12:00:00
 permalink: /about/
 ategory: general
 ---
+# About
 I enjoy working at the intersection of AI, industrial systems, and capital allocation, where the underlying frameworks rarely converge but the consequences are real. I focus on problems where technical depth, operations, and capital constraints collide.
 
 I am drawn to systems that can fail in non-obvious ways: large-scale AI models deployed into safety-critical environments, supply chains that depend on a narrow set of minerals or jurisdictions, and businesses where capital is committed long before the risks are fully understood. My work is about making those systems more observable, resilient, and defensible.
