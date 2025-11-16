@@ -14,7 +14,7 @@ I enjoy working at the intersection of domains whose underlying frameworks rarel
 I'm drawn to problems where technical depth meets operations execution and capital constraints. I like solving them—optimizing complex systems, making them safer, finding patterns across domains.
 
 **What got me here:**
-- Neural networks research → understanding how systems learn and fail
+- Neural networks research in acoustics → understanding how systems learn and fail
 - Automotive systems engineering → learning to optimize complex, interdependent systems
 - Investment banking and private equity → seeing how capital decisions get made under uncertainty
 - CEO roles (critical minerals recycling, advanced manufacturing) → solving problems at scale under constraints
