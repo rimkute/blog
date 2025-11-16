@@ -48,6 +48,14 @@
         <!-- MAIN CONTENT -->
         <main class="site-content">
           <h2 class="page-title">{{ page.title }}</h2>
+
+          {% if page.featured_image %}
+            <div class="post-hero">
+              <img src="{{ page.featured_image | relative_url }}"
+                   alt="{{ page.title }}">
+            </div>
+          {% endif %}
+
           <article class="post-content">
             {{ content }}
           </article>
