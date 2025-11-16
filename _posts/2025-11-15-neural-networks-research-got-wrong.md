@@ -5,8 +5,6 @@ date: 2024-11-15 15:00:00
 permalink: /neural-networks-research/
 category: machine learning
 ---
-# What My Neural Networks Research Got Wrong
-
 In the early 2000s, I published research on using neural networks to locate noise sources with faulty microphone arrays in *The Journal of the Acoustical Society of America*.
 
 That work contains seeds of insights now playing out at massive scale two decades later—and also contains assumptions that were fundamentally wrong.
