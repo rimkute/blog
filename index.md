@@ -14,8 +14,6 @@ This is about real defensibility—systems that survive adversarial conditions.
 
 I've spent years at the intersection of these problems: neural networks, automotive systems, manufacturing at scale, raising capital, and running businesses. What I've learned keeps me focused on one thing: the convergence of AI, security, and supply chain is the defining problem of the next decade.
 
----
-
 ## Why This Matters
 
 I'm Tarun Bhatt. I'm drawn to problems where technical depth meets operations execution and capital constraints. I like solving them—optimizing complex systems, making them safer, finding patterns across domains.
@@ -25,13 +23,11 @@ I'm Tarun Bhatt. I'm drawn to problems where technical depth meets operations ex
 - Automotive systems engineering → learning to optimize complex, interdependent systems
 - Investment banking and private equity → seeing how capital decisions get made under uncertainty
 - CEO roles (critical minerals recycling, advanced manufacturing) → solving problems at scale under constraints
-- MIT Applied AI (current) → staying sharp on what's actually happening in AI
+- MIT Applied AI (current) → diving deep into what's emerging in machine learning
 
 I have patents in automotive acoustics and electric vehicle battery recycling. I've led through restructuring, raised capital, and built technical teams that shipped real products.
 
 I've learned to see patterns others miss, and I genuinely enjoy solving problems at these intersections.
-
----
 
 ## Why Now?
 
@@ -45,8 +41,6 @@ Three forces converge right now:
 
 This is defensibility: not just better technology, but resilience across all three dimensions.
 
----
-
 ## What I'm Thinking About
 
 - How neural networks fail under adversarial inputs, and why automotive security models don't account for it
@@ -55,6 +49,4 @@ This is defensibility: not just better technology, but resilience across all thr
 - What separates companies that scale from those that fail
 - The gap between technical excellence and business reality—and how leaders bridge it
 
----
-
-If you're thinking about these problems—as a founder, investor, operator, or researcher—[let's talk](https://www.linkedin.com/in/belmanco).
+If you're thinking about these problems—as a founder, investor, operator, or researcher—🤝 [let's talk](https://www.linkedin.com/in/belmanco).
