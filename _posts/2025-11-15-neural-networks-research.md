@@ -18,8 +18,6 @@ The key point is not the plumbing. The important part is that we had a relativel
 
 The neural network did not just detect that something was wrong. It learned to localize which microphone in the array was at fault, and it did so under noisy, real-world conditions. That was my first concrete lesson in robustness.
 
-
-
 ## Fast forward to modern AI systems
 
 Today we deploy neural networks in systems that make the acoustic array look trivial.
@@ -29,8 +27,6 @@ An autonomous vehicle consumes high-dimensional sensor streams from cameras, rad
 The same pattern shows up in finance, industrial control, and other domains that attach neural networks to real assets. The network often solves the problem on the data we train it on. What we cannot easily do is trace why it works or predict all the ways it might fail.
 
 This is where robustness stops being a bolt-on metric and becomes a first-class design concern.
-
-
 
 ## Lesson 1: The failure space is effectively infinite
 
@@ -45,8 +41,6 @@ That means building systems that:
 - Monitor for distribution shifts and unknown unknowns, not only known failure patterns  
 - Can shift behavior or fall back gracefully when the operating regime changes  
 - Treat robustness as an ongoing process, not a one-time certification
-
-
 
 ## Lesson 2: Architectural diversity is a security feature
 
@@ -64,8 +58,6 @@ Modern systems can do the same on purpose:
 
 Diversity is not overhead. It is a security feature.
 
-
-
 ## Lesson 3: Structure constrains what can be learned
 
 Every model family comes with built-in lenses. A convolutional network emphasizes local spatial patterns. A transformer emphasizes relationships between tokens. A graph neural network emphasizes connectivity.
@@ -77,8 +69,6 @@ Once you accept this, “just add more data” stops being a strategy. Robust sy
 - Which structures you want the model to perceive  
 - Which invariances you want to encode up front  
 - Which parts of the problem you should not hand to a black box at all
-
-
 
 ## Lesson 4: Robustness has to be measured beyond accuracy
 
@@ -94,8 +84,6 @@ Modern systems need a richer robustness profile:
 - How quickly the system detects and reacts to those changes
 
 This is uncomfortable, because it replaces one number on a slide with a collection of curves. It is also necessary.
-
-
 
 ## From research to practice: a working checklist
 
@@ -118,8 +106,6 @@ When we design or evaluate a neural-network-driven system, we focus on:
 5. **Treating robustness as a continuous process**  
    Instrument systems in production. Feed real-world failures back into design. Assume that new operating regimes and attack surfaces will appear over time.
 
-
-
 ## Where this leads
 
 The microphone array work was a small system in a controlled setting, but it highlighted principles that matter much more in today’s high-stakes deployments.
@@ -127,7 +113,6 @@ The microphone array work was a small system in a controlled setting, but it hig
 Robustness does not emerge automatically from larger models, more data, or better optimizers. It comes from structural choices about diversity, redundancy, and how we measure failure. It comes from systems that expect the environment to change and are built to adapt.
 
 The hard part now is building AI and control systems that treat robustness as a core design property rather than an after-the-fact patch. That is the work I care about and the lens I use when I look at modern neural network deployments, whether in autonomous vehicles, industrial control, or financial systems.
-
 
 
 **Technical references:**
