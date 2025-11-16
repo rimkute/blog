@@ -1,9 +1,10 @@
 ---
 layout: default
 title: "About"
+featured_image: /assets/about.png
 date: 2025-11-01 12:00:00
 permalink: /about/
-ategory: general
+category: general
 ---
 # About
 I enjoy working at the intersection of AI, industrial systems, and capital allocation, where the underlying frameworks rarely converge but the consequences are real. I focus on problems where technical depth, operations, and capital constraints collide.
