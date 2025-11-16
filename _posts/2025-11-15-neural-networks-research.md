@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What We've Built: Lessons on Robustness from Neural Networks Research"
-nav_title: "Robustness from NN Research"
+nav_title: "Robustness from Neural Networks Research"
 date: 2024-11-15 15:00:00
 permalink: /neural-networks-research/
 category: machine learning
