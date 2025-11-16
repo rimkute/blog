@@ -7,7 +7,7 @@ ategory: general
 ---
 # About
 
-I research technical and strategic patterns across domains that most people keep separate.
+I enjoy working at the intersection of domains whose underlying frameworks rarely converge yet unlock outsized impact when strategically connected.
 
 ## Why This Matters
 
