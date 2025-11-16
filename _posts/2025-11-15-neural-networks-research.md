@@ -2,6 +2,7 @@
 layout: post
 title: "Lessons on Robustness from Neural Networks Research"
 nav_title: "Robust AI Systems"
+featured_image: /assets/neural-nets.png
 date: 2024-11-15 15:00:00
 permalink: /neural-networks-research/
 category: machine learning
