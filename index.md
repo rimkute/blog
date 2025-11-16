@@ -5,13 +5,6 @@ date: 2020-01-01 12:00:00
 featured_image: /assets/convergence-main.png
 category: general
 ---
-<p align="center">
-  <img src="assets/convergence-main.png"
-       alt="Venn diagram of AI, security, and supply chain converging over a glowing node on a chip"
-       width="480"
-       style="max-width: 100%; height: auto;">
-</p>
-
 I am a technical CEO, operator, and systems builder focused on large-scale AI systems, security, critical minerals, and industrial manufacturing and supply chains.
 
 AI is advancing faster than we can secure it. The United States faces a critical minerals shortage just as autonomous systems demand exponential compute. We are deploying models with hundreds of billions or even trillions of parameters into critical systems, without a clear understanding of how they fail.
