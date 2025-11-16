@@ -67,16 +67,16 @@ ul {
   flex-shrink: 0;
 }
 
-/* "Logo" / site title (desktop) */
+/* "Logo" / site title (desktop) – slightly smaller */
 .site-title a {
-  font-size: 26px;
+  font-size: 22px;              /* was 26px */
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;       /* slightly tighter */
   text-transform: uppercase;
   color: #2d2d2d;
   display: inline-block;
   text-decoration: none;
-  padding: 8px 10px 6px;
+  padding: 6px 9px 4px;         /* a bit less padding */
   border: 2px solid #b8a898;
   border-radius: 4px;
   background: #f1ebdd;
