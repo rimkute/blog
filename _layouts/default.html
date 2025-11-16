@@ -55,6 +55,14 @@
       <!-- MAIN CONTENT -->
       <main class="site-content">
         <article class="post-content">
+
+          {% if page.featured_image %}
+            <div class="post-hero">
+              <img src="{{ page.featured_image | relative_url }}"
+                   alt="{{ page.title | default: site.title }}">
+            </div>
+          {% endif %}
+
           {{ content }}
         </article>
       </main>
