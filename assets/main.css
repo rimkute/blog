@@ -13,7 +13,7 @@ html, body {
   line-height: 1.6;
 }
 
-/* Global link styling (body content) */
+/* Global link styling (inside article content) */
 a {
   color: #005a8c;
   text-decoration: underline;
@@ -34,11 +34,11 @@ ul {
 /* Main Layout Styling */
 .layout {
   display: flex;
-  flex-direction: row;     /* Two-column layout */
-  margin: 40px auto;       /* More breathing room, centered */
+  flex-direction: row;
+  margin: 40px auto;
   gap: 24px;
-  flex-wrap: wrap;         /* Allow layout to wrap for smaller screens */
-  max-width: 1200px;       /* Prevent ultra-wide line length */
+  flex-wrap: wrap;
+  max-width: 1200px;
 }
 
 .site-wrapper {
@@ -47,7 +47,7 @@ ul {
   min-height: 100vh;
 }
 
-/* Mobile header + overlay (hidden by default, enabled in media query) */
+/* Mobile header + overlay */
 .mobile-header {
   display: none;
 }
@@ -56,10 +56,12 @@ ul {
   display: none;
 }
 
-/* Sidebar Styles */
+/* --------------------------------------------------
+   SIDEBAR (Desktop)
+-------------------------------------------------- */
 .sidebar {
-  width: 360px;            /* Wider sidebar so titles aren't squished */
-  background-color: transparent;
+  width: 360px;
+  background: transparent;
   border-right: 1px solid #d8d8d8;
   padding: 20px;
   flex-shrink: 0;
@@ -75,39 +77,41 @@ ul {
   text-decoration: none;
 }
 
-/* Sidebar Navigation */
+/* Sidebar Nav */
 .sidebar-nav ul {
   list-style-type: none;
   padding-left: 0;
   margin-top: 20px;
 }
 
+/* Increased spacing, cleaner lines */
 .sidebar-nav li {
-  margin-bottom: 6px;
-  padding-bottom: 6px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
   border-bottom: 1px solid #ddd;
 }
 
-/* Sidebar links: ALWAYS bold & slightly larger */
+/* Sidebar links: REGULAR weight */
 .sidebar-nav a {
   padding: 8px 10px;
   display: block;
-  font-size: 16px;          /* prominent size */
-  font-weight: 600;         /* always bold for consistency */
+  font-size: 17px;
+  font-weight: 400;           /* Removed bold */
   letter-spacing: 0.04em;
-  line-height: 1.3;
-  color: #555;
+  line-height: 1.45;
+  color: #444;
   transition: background-color 0.3s ease, color 0.3s ease;
   border-left: 4px solid transparent;
   position: relative;
   text-transform: uppercase;
-  text-decoration: none;    /* nav should not be underlined */
+  text-decoration: none;
 }
 
-/* Active Link Styling – no extra font-weight, just visual highlight */
+/* Active item: bold + colored indicator */
 .sidebar-nav li.active a {
   background-color: #e9dfd3;
-  color: #333;
+  color: #222;
+  font-weight: 600;
   border-left: 4px solid #b8a898;
 }
 
@@ -119,24 +123,26 @@ ul {
   color: #b8a898;
 }
 
-/* Hover Effect */
+/* Hover */
 .sidebar-nav a:hover {
   background-color: #d1c7a1;
-  color: #333;
+  color: #222;
   cursor: pointer;
 }
 
-/* Main Content Styles */
+/* --------------------------------------------------
+   MAIN CONTENT AREA
+-------------------------------------------------- */
 .site-content {
   flex: 1;
   padding: 10px 20px 40px 40px;
-  background-color: transparent;
+  background: transparent;
   box-shadow: none;
   max-width: 900px;
   border-left: 1px solid #e0dfd4;
 }
 
-/* Page / Post Titles */
+/* Page/Post Titles */
 .page-title,
 .post-title {
   font-size: 28px;
@@ -148,13 +154,13 @@ ul {
 
 /* Page content */
 .page-content {
-  background-color: transparent;
+  background: transparent;
   font-size: 18px;
   max-width: 800px;
 }
 
 .page-content p {
-  margin: 0 0 1.3em; /* consistent paragraph spacing */
+  margin: 0 0 1.3em;
 }
 
 /* Post body */
@@ -164,7 +170,7 @@ ul {
 }
 
 .post-content p {
-  margin: 0 0 1.3em;  /* spacing between paragraphs */
+  margin: 0 0 1.3em;
 }
 
 .post-content p:last-child {
@@ -231,8 +237,6 @@ ul {
    MOBILE RESPONSIVE: Hamburger + Slide-out Sidebar
 ------------------------------------------------------ */
 @media (max-width: 900px) {
-
-  /* MOBILE HEADER */
   .mobile-header {
     display: flex;
     align-items: center;
@@ -260,14 +264,13 @@ ul {
     padding: 4px;
   }
 
-  /* LAYOUT STACKS */
   .layout {
     flex-direction: column;
     padding: 0 16px 24px 16px;
     margin: 16px auto;
   }
 
-  /* SIDEBAR AS SLIDE-OUT DRAWER */
+  /* Slide-out drawer */
   .sidebar {
     position: fixed;
     top: 0;
@@ -288,7 +291,6 @@ ul {
     transform: translateX(0);
   }
 
-  /* DARK OVERLAY FOR DRAWER */
   .mobile-overlay {
     display: none;
     position: fixed;
@@ -305,7 +307,6 @@ ul {
     overflow: hidden;
   }
 
-  /* MAIN CONTENT MOBILE FIX */
   .site-content {
     border-left: none;
     padding: 20px 0 40px 0;
