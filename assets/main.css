@@ -67,6 +67,7 @@ ul {
   flex-shrink: 0;
 }
 
+/* "Logo" / site title */
 .site-title a {
   font-size: 26px;
   font-weight: 700;
@@ -331,5 +332,14 @@ ul {
 
   .sidebar-nav a {
     border-bottom: none;
+  }
+
+  /* Mobile-specific tweaks for the logo in the slide-out sidebar */
+  .sidebar .site-title a {
+    font-size: 22px;
+    letter-spacing: 0.14em;
+    padding: 6px 8px 5px;
+    margin-bottom: 18px;
+    display: block;
   }
 }
