@@ -5,39 +5,29 @@ date: 2025-11-01 12:00:00
 permalink: /about/
 ategory: general
 ---
-# About
+I enjoy working at the intersection of AI, industrial systems, and capital allocation, where the underlying frameworks rarely converge but the consequences are real. I focus on problems where technical depth, operations, and capital constraints collide.
 
-I enjoy working at the intersection of domains whose underlying frameworks rarely converge yet unlock outsized impact when strategically connected.
+I am drawn to systems that can fail in non-obvious ways: large-scale AI models deployed into safety-critical environments, supply chains that depend on a narrow set of minerals or jurisdictions, and businesses where capital is committed long before the risks are fully understood. My work is about making those systems more observable, resilient, and defensible.
 
-## Why This Matters
+### What got me here
 
-I'm drawn to problems where technical depth meets operations execution and capital constraints. I like solving them—optimizing complex systems, making them safer, finding patterns across domains.
+- **Neural networks in acoustics:** early research on how models learn structure from noisy sensor data.  
+- **Automotive systems:** led global product development and manufacturing programs under tight safety, cost, and reliability constraints.  
+- **Investment banking and private equity:** saw how capital decisions get made when information is incomplete and risks are asymmetric.  
+- **CEO/COO roles in critical minerals recycling and refinery-scale advanced manufacturing:** built plants and teams to solve hard technical problems under real operational and capital constraints.  
+- **MIT (current):** staying close to what is actually emerging in machine learning, not just the headlines.
 
-**What got me here:**
-- Neural networks research in acoustics → understanding how systems learn and fail
-- Automotive systems engineering → learning to optimize complex, interdependent systems
-- Investment banking and private equity → seeing how capital decisions get made under uncertainty
-- CEO roles (critical minerals recycling, advanced manufacturing) → solving problems at scale under constraints
-- MIT Applied AI (current) → diving deep into what's emerging in machine learning
+I have authored patents in automotive acoustics and electric vehicle battery recycling. I have led through restructuring, raised capital, and built technical teams that shipped products into production environments. Those experiences shape how I think about risk, resilience, and where leverage really sits in a system.
 
-I have authored patents in [automotive acoustics](https://patents.google.com/patent/US6767050B2/) and [electric vehicle battery recycling](https://patents.google.com/patent/US11682801B1/). I've led through restructuring, raised capital, and built technical teams that shipped real products.
+### What I am focused on now
 
-I've learned to see patterns others miss, and I genuinely enjoy solving problems at these intersections.
+AI systems are advancing quickly, but we still do not fully understand how neural network weights encode behavior, how decision boundaries form, or how these systems fail under adversarial conditions. At the same time, AI compute demand is stressing semiconductor supply chains that depend on a small set of critical minerals and geopolitical choices. Leadership teams are being asked to make multi-billion-dollar decisions inside that uncertainty.
 
-## What I'm Focused On Now
+That is the convergence problem.
 
-I'm seeing the shape of the next problem. AI systems are advancing exponentially. Neural networks can solve perception problems at scales that were impossible ten years ago. But we don't fully understand them—neural network weights aren't intelligible, we can't explain decision boundaries, and we can't predict adversarial failure modes.
+- How neural networks fail under adversarial and distributional shift, and why current safety and security models often miss those risks.  
+- Where defensibility actually sits in critical minerals and advanced manufacturing, and when vertical integration is the only credible strategy.  
+- How to evaluate deep-tech companies beyond surface metrics and narratives, using a systems and capital-allocation lens.  
+- How leaders close the gap between technical truth, operational reality, and the stories they tell boards, regulators, and markets.
 
-Yet this is being deployed in critical systems: autonomous vehicles, defense applications, infrastructure control systems. Without full understanding.
-
-There's a supply chain story hidden underneath. AI compute demand is driving semiconductor scarcity. Semiconductors require rare materials. The US has a critical minerals shortage. The timing is misaligned with geopolitics.
-
-And the leadership problem is different now. You can't just be a great technologist. You can't just be a great operator. You need to integrate technical depth, supply chain reality, capital mechanics, and clear vision.
-
-That's the convergence problem. It's why I'm focused on:
-
-- How neural networks fail under adversarial inputs, and why automotive security models don't account for it
-- Why vertical integration of critical minerals is the only real defensibility strategy
-- How to evaluate deep tech companies when surface metrics mislead
-- What separates companies that scale from those that fail
-- The gap between technical excellence and business reality—and how leaders bridge it
+If you are building or investing in any of these areas and want a blunt, systems-level view of the risks and opportunities, reach out.
