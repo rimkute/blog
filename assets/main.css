@@ -68,13 +68,18 @@ ul {
 }
 
 .site-title a {
-  font-size: 24px;
-  font-weight: 400;
-  color: #333;
-  letter-spacing: 0.5px;
-  margin-bottom: 20px;
-  display: block;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #2d2d2d;
+  display: inline-block;
   text-decoration: none;
+  padding: 8px 10px 6px;
+  border: 2px solid #b8a898;
+  border-radius: 4px;
+  background: #f1ebdd;
+  margin-bottom: 20px;
 }
 
 /* Sidebar Nav */
