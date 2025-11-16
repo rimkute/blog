@@ -8,43 +8,86 @@
   </head>
 
   <body>
+    <div class="site-wrapper">
 
-    <div class="layout">
-      <!-- SIDEBAR -->
-      <aside class="sidebar">
-        <h1 class="site-title">
-          <a href="{{ "/" | relative_url }}">Tarun Bhatt</a> <!-- Removed the slash part -->
-        </h1>
+      <!-- Mobile header (only visible on small screens via CSS) -->
+      <header class="mobile-header">
+        <div class="mobile-title">
+          <a href="{{ "/" | relative_url }}">Tarun Bhatt</a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation">☰</button>
+      </header>
 
-        <nav class="sidebar-nav">
-          <ul>
-            <!-- ABOUT -->
-            <li class="{% if page.url == '/about/' %}active{% endif %}">
-              <a href="{{ '/about/' | relative_url }}">ABOUT</a>
-            </li>
+      <div class="layout">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <h1 class="site-title">
+            <a href="{{ "/" | relative_url }}">Tarun Bhatt</a>
+          </h1>
 
-            <!-- LOOP ALL POSTS -->
-            {% assign sorted_posts = site.posts | sort: 'title' %}
-            {% for post in sorted_posts %}
-              <li class="{% if page.url == post.url %}active{% endif %}">
-                <a href="{{ post.url | relative_url }}">
-                  {{ post.nav_title | default: post.title }}
-                </a>
+          <nav class="sidebar-nav">
+            <ul>
+              <!-- ABOUT -->
+              <li class="{% if page.url == '/about/' %}active{% endif %}">
+                <a href="{{ '/about/' | relative_url }}">ABOUT</a>
               </li>
-            {% endfor %}
-          </ul>
-        </nav>
-      </aside>
 
-      <!-- MAIN CONTENT -->
-      <main class="site-content">
-        <h2 class="page-title">{{ page.title }}</h2>
+              <!-- LOOP ALL POSTS (newest first, sorted by date) -->
+              {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+              {% for post in sorted_posts %}
+                <li class="{% if page.url == post.url %}active{% endif %}">
+                  <a href="{{ post.url | relative_url }}">
+                    {{ post.nav_title | default: post.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </aside>
 
-        <article class="post-content">
-          {{ content }}
-        </article>
-      </main>
+        <!-- MAIN CONTENT -->
+        <main class="site-content">
+          <h2 class="page-title">{{ page.title }}</h2>
+          <article class="post-content">
+            {{ content }}
+          </article>
+        </main>
+      </div>
+
+      <!-- Overlay used when mobile sidebar is open -->
+      <div class="mobile-overlay"></div>
     </div>
 
+    <script>
+      (function () {
+        const toggle  = document.querySelector('.mobile-menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.querySelector('.mobile-overlay');
+
+        if (!toggle || !sidebar) return;
+
+        function closeMenu() {
+          sidebar.classList.remove('open');
+          document.body.classList.remove('sidebar-open');
+          if (overlay) overlay.classList.remove('visible');
+        }
+
+        toggle.addEventListener('click', function () {
+          const isOpen = sidebar.classList.toggle('open');
+          document.body.classList.toggle('sidebar-open', isOpen);
+          if (overlay) overlay.classList.toggle('visible', isOpen);
+        });
+
+        if (overlay) {
+          overlay.addEventListener('click', closeMenu);
+        }
+
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 900) {
+            closeMenu();
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
