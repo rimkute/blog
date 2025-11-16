@@ -18,11 +18,20 @@
 
 <body>
   <div class="site-wrapper">
+
+    <!-- Mobile header (shown only on small screens via CSS) -->
+    <header class="mobile-header">
+      <div class="mobile-title">
+        <a href="{{ '/' | relative_url }}">Tarun Bhatt</a>
+      </div>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation">☰</button>
+    </header>
+
     <div class="layout">
       <!-- SIDEBAR -->
       <aside class="sidebar">
         <div class="site-title">
-          <a href="{{ '/' | relative_url }}">Tarun Bhatt</a> <!-- Removed slash -->
+          <a href="{{ '/' | relative_url }}">Tarun Bhatt</a>
         </div>
 
         <nav class="sidebar-nav">
@@ -32,7 +41,7 @@
               <a href="{{ '/about/' | relative_url }}">About</a>
             </li>
 
-            <!-- Loop through the blog posts -->
+            <!-- Loop through the blog posts (newest first) -->
             {% assign sorted_posts = site.posts | sort: "date" | reverse %}
             {% for post in sorted_posts %}
               <li class="{% if page.url == post.url %}active{% endif %}">
@@ -48,6 +57,41 @@
         {{ content }}
       </main>
     </div>
+
+    <!-- Overlay used when mobile sidebar is open -->
+    <div class="mobile-overlay"></div>
   </div>
+
+  <script>
+    (function () {
+      const toggle  = document.querySelector('.mobile-menu-toggle');
+      const sidebar = document.querySelector('.sidebar');
+      const overlay = document.querySelector('.mobile-overlay');
+
+      if (!toggle || !sidebar) return;
+
+      function closeMenu() {
+        sidebar.classList.remove('open');
+        document.body.classList.remove('sidebar-open');
+        if (overlay) overlay.classList.remove('visible');
+      }
+
+      toggle.addEventListener('click', function () {
+        const isOpen = sidebar.classList.toggle('open');
+        document.body.classList.toggle('sidebar-open', isOpen);
+        if (overlay) overlay.classList.toggle('visible', isOpen);
+      });
+
+      if (overlay) {
+        overlay.addEventListener('click', closeMenu);
+      }
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 900) {
+          closeMenu();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
