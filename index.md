@@ -1,8 +1,8 @@
 ---
 layout: default
 title: "Tarun"
-date: 2020-01-01 12:00:00
 featured_image: /assets/convergence-main.png
+date: 2020-01-01 12:00:00
 category: general
 ---
 I am a technical CEO, operator, and systems builder focused on large-scale AI systems, security, critical minerals, and industrial manufacturing and supply chains.
