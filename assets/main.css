@@ -7,7 +7,7 @@
 
 html, body {
   font-family: "Roboto", sans-serif;
-  background: #f9f7ec;  /* Lighter shade of #f5eee4 */
+  background: #f9f7ec;
   color: #2d2d2d;
   height: 100%;
   line-height: 1.6;
@@ -23,14 +23,31 @@ ul {
   list-style: none;
 }
 
+/* Make article links visible */
+.post-content a,
+.page-content a {
+  color: #0047ab;                 /* soft deep blue */
+  background: rgba(200, 180, 150, 0.28);  /* light beige highlight */
+  padding: 1px 3px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.post-content a:hover,
+.page-content a:hover {
+  background: rgba(200, 180, 150, 0.45);
+  color: #003b8e;
+  text-decoration: underline;
+}
+
 /* Main Layout Styling */
 .layout {
   display: flex;
-  flex-direction: row;     /* Two-column layout */
-  margin: 40px auto;       /* More breathing room, centered */
+  flex-direction: row;
+  margin: 40px auto;
   gap: 24px;
-  flex-wrap: wrap;         /* Allow layout to wrap for smaller screens */
-  max-width: 1200px;       /* Prevent ultra-wide line length */
+  flex-wrap: wrap;
+  max-width: 1200px;
 }
 
 .site-wrapper {
@@ -39,7 +56,7 @@ ul {
   min-height: 100vh;
 }
 
-/* Mobile header + overlay (hidden by default, enabled in media query) */
+/* Mobile header + overlay (hidden by default) */
 .mobile-header {
   display: none;
 }
@@ -50,7 +67,7 @@ ul {
 
 /* Sidebar Styles */
 .sidebar {
-  width: 360px;            /* Wider sidebar so titles aren't squished */
+  width: 360px;
   background-color: transparent;
   border-right: 1px solid #d8d8d8;
   padding: 20px;
@@ -108,7 +125,6 @@ ul {
   color: #b8a898;
 }
 
-/* Hover Effect */
 .sidebar-nav a:hover {
   background-color: #d1c7a1;
   color: #333;
@@ -125,7 +141,7 @@ ul {
   border-left: 1px solid #e0dfd4;
 }
 
-/* Page / Post Titles */
+/* Titles */
 .page-title,
 .post-title {
   font-size: 28px;
@@ -135,7 +151,7 @@ ul {
   margin-bottom: 24px;
 }
 
-/* Page content */
+/* Page Content */
 .page-content {
   background-color: transparent;
   font-size: 18px;
@@ -143,7 +159,7 @@ ul {
 }
 
 .page-content p {
-  margin: 0 0 1.3em; /* improved spacing */
+  margin: 0 0 1.3em;
 }
 
 /* Post body */
@@ -153,14 +169,14 @@ ul {
 }
 
 .post-content p {
-  margin: 0 0 1.3em;  /* Proper spacing between paragraphs */
+  margin: 0 0 1.3em;
 }
 
 .post-content p:last-child {
   margin-bottom: 0;
 }
 
-/* Headings inside articles */
+/* Headings */
 .site-content h1 {
   font-size: 28px;
   font-weight: 700;
@@ -216,12 +232,11 @@ ul {
   border-radius: 3px;
 }
 
-/* -----------------------------------------------------
-   MOBILE RESPONSIVE: Hamburger + Slide-out Sidebar
------------------------------------------------------- */
+/* ------------------------------------
+   MOBILE RESPONSIVE
+------------------------------------ */
 @media (max-width: 900px) {
 
-  /* MOBILE HEADER */
   .mobile-header {
     display: flex;
     align-items: center;
@@ -248,14 +263,12 @@ ul {
     padding: 4px;
   }
 
-  /* LAYOUT STACKS */
   .layout {
     flex-direction: column;
     padding: 0 16px 24px 16px;
     margin: 16px auto;
   }
 
-  /* SIDEBAR AS SLIDE-OUT DRAWER */
   .sidebar {
     position: fixed;
     top: 0;
@@ -268,7 +281,7 @@ ul {
     border-right: 1px solid #d8d8d8;
     transform: translateX(-100%);
     transition: transform 0.25s ease-out;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.15);
     z-index: 1000;
   }
 
@@ -276,12 +289,11 @@ ul {
     transform: translateX(0);
   }
 
-  /* DARK OVERLAY FOR DRAWER */
   .mobile-overlay {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0,0,0,0.2);
     z-index: 800;
   }
 
@@ -293,14 +305,9 @@ ul {
     overflow: hidden;
   }
 
-  /* MAIN CONTENT MOBILE FIX */
   .site-content {
     border-left: none;
     padding: 20px 0 40px 0;
     max-width: 100%;
-  }
-
-  .sidebar-nav a {
-    border-bottom: none;
   }
 }
