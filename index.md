@@ -4,8 +4,6 @@ title: "The Convergence Problem"
 date: 2024-01-01
 category: general
 ---
-# The Convergence Problem
-
 AI is advancing faster than we can secure it. The US faces a critical minerals shortage precisely when autonomous systems demand exponential compute. Understanding hundred-billion to trillion-parameter algorithms is genuinely hard—and we're deploying them in critical systems without a clear grasp of failure modes.
 
 The winners won't be the fastest to market. They'll be technical leaders who understand their systems inside and out, grasp supply chain resilience as core business strategy, and can communicate clear vision across engineering, manufacturing, and capital allocation.
