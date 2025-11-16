@@ -17,7 +17,7 @@ I am drawn to systems that can fail in non-obvious ways: large-scale AI models d
 - **Automotive systems:** led global product development and manufacturing programs under tight safety, cost, and reliability constraints.  
 - **Investment banking and private equity:** saw how capital decisions get made when information is incomplete and risks are asymmetric.  
 - **CEO/COO roles in critical minerals recycling and refinery-scale advanced manufacturing:** built plants and teams to solve hard technical problems under real operational and capital constraints.  
-- **MIT (current):** staying close to what is actually emerging in machine learning, not just the headlines.
+- **MIT (current):** staying close to what is actually emerging in machine learning.
 
 I have authored patents in automotive acoustics and electric vehicle battery recycling. I have led through restructuring, raised capital, and built technical teams that shipped products into production environments. Those experiences shape how I think about risk, resilience, and where leverage really sits in a system.
 
