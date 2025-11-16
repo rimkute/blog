@@ -20,7 +20,7 @@ I'm drawn to problems where technical depth meets operations execution and capit
 - CEO roles (critical minerals recycling, advanced manufacturing) → solving problems at scale under constraints
 - MIT Applied AI (current) → diving deep into what's emerging in machine learning
 
-I have patents in [automotive acoustics](https://patents.google.com/patent/US6767050B2/) and [electric vehicle battery recycling](https://patents.google.com/patent/US11682801B1/). I've led through restructuring, raised capital, and built technical teams that shipped real products.
+I have authored patents in [automotive acoustics](https://patents.google.com/patent/US6767050B2/) and [electric vehicle battery recycling](https://patents.google.com/patent/US11682801B1/). I've led through restructuring, raised capital, and built technical teams that shipped real products.
 
 I've learned to see patterns others miss, and I genuinely enjoy solving problems at these intersections.
 
