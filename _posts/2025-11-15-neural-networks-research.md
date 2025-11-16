@@ -66,7 +66,7 @@ Here's why: A CNN (Convolutional Neural Network) processes images by examining l
 
 **Structure constrains what can be learned**: The network architecture—how many layers, what types of layers, how neurons connect—shapes what patterns the network can discover. It's like the difference between a microscope and a telescope: same purpose (seeing), but the design constrains what you can observe. This isn't a limitation we work around; it's a design principle we leverage.
 
-### What Two Decades Have Built
+## What Two Decades Have Built
 
 The core insight that has guided us: **diversity is a security feature.** This isn't new—engineers have known this for decades. But applying it to neural networks, understanding *why* it works, and building systems around it—that's what we've learned.
 
