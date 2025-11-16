@@ -9,7 +9,7 @@ In the early 2000s, I published research on using neural networks to locate nois
 
 That work contains seeds of insights now playing out at massive scale two decades later—and also contains assumptions that were fundamentally wrong.
 
-## The Technical Approach
+### The Technical Approach
 
 We processed SISO (Single Input Single Output) microphone signals using FFT (Fast Fourier Transform) analysis on unwrapped phase data to extract Time Difference of Arrival (TDOA) information. A Matched Filter Array (MFA) pipeline applied coherence filtering to clean noisy phase plots. Neural networks then learned patterns in residual errors to identify and localize faulty microphones.
 
@@ -17,7 +17,7 @@ We processed SISO (Single Input Single Output) microphone signals using FFT (Fas
 
 **The insight**: Neural networks excel at finding patterns in redundant systems trained on examples of correct behavior and failure modes.
 
-## Fast Forward to 2025
+### Fast Forward to Now
 
 Scale the problem: autonomous vehicles with dozens of sensors (cameras, LiDAR (Light Detection and Ranging), radar, and IMU (Inertial Measurement Unit)). Some are faulty. Some are attacked. You need ground truth about the world.
 
@@ -29,7 +29,7 @@ In 2025, sensor fusion is enormous. 1000+ dimensional input space. Non-stationar
 
 The network solves the problem. We can't explain how.
 
-## Where I Was Right
+### Where I Was Right
 
 Neural networks are exceptional at anomaly detection in redundant systems with known failure modes. They distinguish random failures from systematic attacks, sensor noise from adversarial input.
 
@@ -39,7 +39,7 @@ Neural networks are exceptional at anomaly detection in redundant systems with k
 - Rapid inference
 - Adaptation to new patterns
 
-## Where I Was Wrong
+### Where I Was Wrong
 
 I assumed: *If you have enough good examples and enough failure modes, the network generalizes to the full problem space.*
 
@@ -71,7 +71,7 @@ The vulnerability lives in the **architecture itself**, not just in the training
 
 Two networks with identical training data but different architectures will have different learned representations and different vulnerabilities. This is the insight behind heterogeneous architectures: *architectural diversity is a security feature*.
 
-## What Two Decades Taught Me
+### What Two Decades Taught Me
 
 If I could tell my early 2000s self one thing about neural networks and security:
 
@@ -83,7 +83,7 @@ Also:
 - Your training data shapes the model as much as your architecture
 - Interpretability matters for security: if you can't explain a decision, you can't defend it
 
-## The Gap That Matters
+### The Gap That Matters
 
 Modern AI systems face exactly the problem I didn't anticipate: **robust learning in high-dimensional, adversarial spaces where you can't enumerate failure modes.**
 
