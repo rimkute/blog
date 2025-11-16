@@ -11,13 +11,13 @@ That work contains seeds of insights now playing out at massive scale two decade
 
 ### The Technical Approach
 
-I processed SISO (Single Input Single Output) microphone signals using FFT (Fast Fourier Transform) analysis on unwrapped phase data to extract Time Difference of Arrival (TDOA) information. A Matched Filter Array (MFA) pipeline applied coherence filtering to clean noisy phase plots. Neural networks then learned patterns in residual errors to identify and localize faulty microphones.
+We processed SISO (Single Input Single Output) microphone signals using FFT (Fast Fourier Transform) analysis on unwrapped phase data to extract Time Difference of Arrival (TDOA) information. A Matched Filter Array (MFA) pipeline applied coherence filtering to clean noisy phase plots. Neural networks then learned patterns in residual errors to identify and localize faulty microphones.
 
 **The core finding**: Neural networks didn't just detect faults—they localized them, learning that measurement corruption has statistical signatures without being programmed to look for specific fault types.
 
 **The insight**: Neural networks excel at finding patterns in redundant systems trained on examples of correct behavior and failure modes.
 
-### Fast Forward to Now
+### Fast Forward to Today
 
 Scale the problem: autonomous vehicles with dozens of sensors (cameras, LiDAR (Light Detection and Ranging), radar, and IMU (Inertial Measurement Unit)). Some are faulty. Some are attacked. You need ground truth about the world.
 
@@ -25,7 +25,13 @@ The same approach applies: train neural networks on sensor fusion data with exam
 
 **But here's what changes**: In the early 2000s, the acoustic system was simple enough to understand *why* the network decided what it did. Small input space. Stationary signals. Characterized noise.
 
-In 2025, sensor fusion is enormous. 1000+ dimensional input space. Non-stationary signals. Adversarial noise (not random).
+In modern systems, sensor fusion is genuinely enormous:
+
+- **1000+ dimensional input space**: Each camera produces thousands of pixel values. LiDAR creates point clouds with millions of 3D coordinates. Radar data, GPS signals, and inertial measurement readings add thousands more variables. Compare this to early 2000s: a handful of microphones, a few measurements. The complexity is orders of magnitude higher.
+
+- **Non-stationary signals**: In acoustic work, sound traveled predictably—the physics was stable. In real-world driving, pedestrians appear suddenly, weather changes instantly, lighting shifts, road surfaces vary. The "rules" of what sensor data should look like are constantly changing.
+
+- **Adversarial noise (not random)**: In the 2000s, microphones failed randomly—dead sensors, drift, electromagnetic interference. Predictable failure modes. Today, attackers deliberately craft false sensor readings designed specifically to fool the system. This is intentional deception, not random malfunction.
 
 The network solves the problem. We can't explain how.
 
@@ -47,7 +53,7 @@ False at scale. Here's why:
 
 **The failure space is infinite**: In the early 2000s, I could enumerate faults. Dead microphone. Drift. Electromagnetic interference. 
 
-In 2025, adversarial attacks work *because* they exploit the parts of input space you didn't train on. You can't train on all possible adversarial examples.
+Today, adversarial attacks work *because* they exploit the parts of input space you didn't train on. You can't train on all possible adversarial examples.
 
 **Transfer is limited**: Here's the counterintuitive part: training one network architecture to resist attacks doesn't automatically protect a different architecture, even if trained identically.
 
@@ -94,9 +100,8 @@ This is the gap between state-of-the-art and actually safe.
 ---
 
 **Technical references:**
-
-- Bhatt, T. K., Darvennes, C. M., and Ossanya, E. ["Acoustic Source Location Using a Neural Network,"](https://pubs.aip.org/asa/jasa/article/101/5_Supplement/3057/562137/Acoustic-source-location-using-a-neural-network) *Journal of the Acoustical Society of America*, Vol. 101, pp. 3057, 1997.
-- Bhatt, T. K., Darvennes, C. M., and Houghton, J. R. ["Feasibility of Using Imperfect Microphone Arrays in Noise Source Location,"](https://pubs.aip.org/asa/jasa/article/103/5_Supplement/2897/559655/Feasibility-of-using-imperfect-microphone-arrays) *Proceedings of the International Congress on Acoustics and Acoustical Society of America*, Vol. II, pp. 13/17-13/18, Seattle, WA, 1998.
-- Bhatt, T. K. "Acoustic Source Location in a Noisy Environment Using a Microphone Array." (1999).
+- Bhatt, T. K., Darvennes, C. M., and Ossanya, E. <u>["Acoustic Source Location Using a Neural Network,"](https://pubs.aip.org/asa/jasa/article/101/5_Supplement/3057/562137/Acoustic-source-location-using-a-neural-network)</u> *Journal of the Acoustical Society of America*, Vol. 101, pp. 3057, 1997.
+- Bhatt, T. K., Darvennes, C. M., and Houghton, J. R. <u>["Feasibility of Using Imperfect Microphone Arrays in Noise Source Location,"](https://pubs.aip.org/asa/jasa/article/103/5_Supplement/2897/559655/Feasibility-of-using-imperfect-microphone-arrays)</u> *Proceedings of the International Congress on Acoustics and Acoustical Society of America*, Vol. II, pp. 13/17-13/18, Seattle, WA, 1998.
+- Bhatt, T. K. "Acoustic Source Location in a Noisy Environment Using a Microphone Array." Master's thesis, Tennessee Technological University (1999).
 - Goodfellow et al., "Explaining and Harnessing Adversarial Examples" (2014)
 - Beye & Kim, "Interpretable Machine Learning" (2019)
