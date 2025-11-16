@@ -67,7 +67,7 @@ ul {
   flex-shrink: 0;
 }
 
-/* "Logo" / site title */
+/* "Logo" / site title (desktop) */
 .site-title a {
   font-size: 26px;
   font-weight: 700;
@@ -334,12 +334,18 @@ ul {
     border-bottom: none;
   }
 
-  /* Mobile-specific tweaks for the logo in the slide-out sidebar */
+  /* MOBILE: simplify the site title (no box, smaller text) */
   .sidebar .site-title a {
-    font-size: 22px;
-    letter-spacing: 0.14em;
-    padding: 6px 8px 5px;
-    margin-bottom: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2d2d2d;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 16px;
     display: block;
   }
 }
