@@ -2,6 +2,7 @@
 layout: default
 title: "Tarun"
 date: 2020-01-01 12:00:00
+featured_image: /assets/convergence-main.png
 category: general
 ---
 <p align="center">
