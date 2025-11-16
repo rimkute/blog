@@ -6,7 +6,7 @@ date: 2024-11-15 15:00:00
 permalink: /neural-networks-research/
 category: machine learning
 ---
-We keep asking neural networks to run critical systems while knowing very little about how they will fail. Here I use an old acoustic-array project as a concrete case study in robustness and extract the structural lessons that still matter for today’s large-scale models.
+Neural networks now sit at the core of critical systems, yet we understand far less about how they fail than how they succeed. In this article I revisit an acoustic-array project as a concrete robustness case study and distill the structural lessons that remain relevant for modern large-scale models.
 
 ## From acoustic arrays to neural networks
 
