@@ -41,10 +41,10 @@ The network solves the problem. We can't explain how.
 Neural networks are exceptional at anomaly detection in redundant systems with known failure modes. They distinguish random failures from systematic attacks, sensor noise from adversarial input.
 
 **Where they excel:**
-- Pattern recognition in high-dimensional data
-- Anomaly detection with trained examples
-- Rapid inference
-- Adaptation to new patterns
+1. Pattern recognition in high-dimensional data
+2. Anomaly detection with trained examples
+3. Rapid inference
+4. Adaptation to new patterns
 
 ## What We've Built On
 
@@ -73,11 +73,11 @@ The core insight that has guided us: **diversity is a security feature.** This i
 When redundant systems differ in structure, you get genuine robustness. When they're identical, coordinated failure is inevitable. That simple principle has shaped how we think about AI systems at scale.
 
 From research to practice:
-- Understand what your network has learned, not just its outputs
-- Test for adversarial robustness, not just accuracy on test sets
-- Architectural diversity isn't overhead—it's part of your defense
-- Your training data shapes the model as much as your architecture
-- Interpretability matters: if you can't explain a decision, you can't defend it
+1. Understand what your network has learned, not just its outputs
+2. Test for adversarial robustness, not just accuracy on test sets
+3. Architectural diversity isn't overhead—it's part of your defense
+4. Your training data shapes the model as much as your architecture
+5. Interpretability matters: if you can't explain a decision, you can't defend it
 
 ## The Frontier Ahead
 
