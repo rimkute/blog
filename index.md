@@ -7,7 +7,7 @@ category: general
 ---
 I am a technical CEO, operator, and systems builder focused on large-scale AI systems, security, critical minerals, and industrial manufacturing and supply chains.
 
-AI is advancing faster than we can secure it. The United States faces a critical minerals shortage just as autonomous systems demand exponential compute. We are deploying models with hundreds of billions or even trillions of parameters into critical systems, without a clear understanding of how they fail.
+AI is advancing faster than we can secure it. The United States faces a critical minerals shortage just as autonomous systems demand exponential compute. We are deploying models with hundreds of billions of parameters into critical systems, without a clear understanding of how they fail.
 
 The leaders who win in this environment will not be the fastest to ship features. They will be the ones who understand their systems end to end, treat supply chain resilience as core business strategy, and communicate clearly with engineering, manufacturing, and capital partners.
 
@@ -33,7 +33,7 @@ The strongest moats form where these three pressures intersect.
 My work centers on the junction of AI, autonomy, energy, and critical minerals, framed through questions like:
 
 - How do we make systems observable and robust enough for real industrial and public-infrastructure use?
-- How do critical minerals and manufacturing constraints reshape what is actually buildable?  
-- How should boards and CEOs think about security and resilience as part of capital allocation?  
+- How do critical minerals and manufacturing constraints reshape what is actually buildable?
+- How should boards and CEOs think about security and resilience as part of capital allocation?
 
-If this is the world you are working in and you want to think through it together, 🤝 [let's talk](https://www.linkedin.com/in/belmanco).
+If this is the world you are working in and you want to think through it together, 🤝 [let’s talk](https://www.linkedin.com/in/belmanco).
