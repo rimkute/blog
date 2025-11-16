@@ -10,7 +10,7 @@ In the early 2000s, I published research on using neural networks to locate nois
 
 That work planted seeds that have grown into something bigger. Two decades later, those same principles are scaling to solve real-world problems at enormous complexity. But the journey from simple acoustic arrays to modern AI systems has taught us something essential: **what we build depends on understanding not just what works, but why it works.**
 
-### The Technical Approach
+## The Technical Approach
 
 I processed SISO (Single Input Single Output) microphone signals using FFT (Fast Fourier Transform) analysis on unwrapped phase data to extract Time Difference of Arrival (TDOA) information. A Matched Filter Array (MFA) pipeline applied coherence filtering to clean noisy phase plots. Neural networks then learned patterns in residual errors to identify and localize faulty microphones.
 
@@ -18,7 +18,7 @@ I processed SISO (Single Input Single Output) microphone signals using FFT (Fast
 
 **The insight**: Neural networks excel at finding patterns in redundant systems trained on examples of correct behavior and failure modes.
 
-### Fast Forward to Today
+## Fast Forward to Today
 
 Scale the problem: autonomous vehicles with dozens of sensors (cameras, LiDAR (Light Detection and Ranging), radar, and IMU (Inertial Measurement Unit)). Some are faulty. Some are attacked. You need ground truth about the world.
 
@@ -36,7 +36,7 @@ In modern systems, sensor fusion is genuinely enormous:
 
 The network solves the problem. We can't explain how.
 
-### What We Got Right
+## What We Got Right
 
 Neural networks are exceptional at anomaly detection in redundant systems with known failure modes. They distinguish random failures from systematic attacks, sensor noise from adversarial input.
 
@@ -46,7 +46,7 @@ Neural networks are exceptional at anomaly detection in redundant systems with k
 - Rapid inference
 - Adaptation to new patterns
 
-### What We've Built On
+## What We've Built On
 
 I assumed: *If you have enough good examples and enough failure modes, the network generalizes to the full problem space.*
 
@@ -79,7 +79,7 @@ From research to practice:
 - Your training data shapes the model as much as your architecture
 - Interpretability matters: if you can't explain a decision, you can't defend it
 
-### The Frontier Ahead
+## The Frontier Ahead
 
 Modern AI systems face a challenge we're learning to solve: **building robust learning in high-dimensional, adversarial spaces where you can't enumerate all failure modes.**
 
