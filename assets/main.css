@@ -177,6 +177,17 @@ ul {
   margin-bottom: 0;
 }
 
+/* Hero image block used by featured_image */
+.post-hero {
+  margin: 1.5rem 0 2rem;
+}
+
+.post-hero img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Headings inside articles */
 .site-content h1 {
   font-size: 28px;
