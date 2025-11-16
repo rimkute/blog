@@ -9,7 +9,7 @@ I am a technical CEO, operator, and systems builder focused on large-scale AI sy
 
 AI is advancing faster than we can secure it. The United States faces a critical minerals shortage just as autonomous systems demand exponential compute. We are deploying models with hundreds of billions of parameters into critical systems, without a clear understanding of how they fail.
 
-The leaders who win in this environment will not be the fastest to ship features. They will be the ones who understand their systems end to end, treat supply chain resilience as core business strategy, and communicate clearly with engineering, manufacturing, and capital partners.
+The leaders who win in this environment will ship fast while still understanding their systems end to end, treating supply chain resilience as core business strategy, and communicating clearly with engineering, manufacturing, and capital partners.
 
 My career has spanned neural networks, automotive systems, large-scale manufacturing, capital raising, restructuring, and company building. That experience keeps me focused on one question: how to build systems and businesses that remain defensible under attack.
 
