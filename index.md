@@ -4,49 +4,309 @@ title: "Home"
 date: 2025-01-01
 ategory: general
 ---
-# The Convergence Problem
+/* Global Reset and Body Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-AI is advancing faster than we can secure it. The US faces a critical minerals shortage precisely when autonomous systems demand exponential compute. Understanding hundred-billion to trillion-parameter algorithms is genuinely hard—and we're deploying them in critical systems without a clear grasp of failure modes.
+html, body {
+  font-family: "Roboto", sans-serif;
+  background: #f9f7ec;  /* Lighter shade of #f5eee4 */
+  color: #2d2d2d;
+  height: 100%;
+  line-height: 1.6;
+}
 
-The winners won't be the fastest to market. They'll be technical leaders who understand their systems inside and out, grasp supply chain resilience as core business strategy, and can communicate clear vision across engineering, manufacturing, and capital allocation.
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease, background 0.25s ease;
+}
 
-This is about real defensibility—systems that survive adversarial conditions.
+ul {
+  list-style: none;
+}
 
-I've spent years at the intersection of these problems: neural networks, automotive systems, manufacturing at scale, raising capital, and running businesses. What I've learned keeps me focused on one thing: the convergence of AI, security, and supply chain is the defining problem of the next decade.
+/* Main Layout Styling */
+.layout {
+  display: flex;
+  flex-direction: row;     /* Two-column layout */
+  margin: 40px auto;       /* More breathing room, centered */
+  gap: 24px;
+  flex-wrap: wrap;         /* Allow layout to wrap for smaller screens */
+  max-width: 1200px;       /* Prevent ultra-wide line length */
+}
 
-## Why This Matters
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-I'm Tarun Bhatt. I'm drawn to problems where technical depth meets operations execution and capital constraints. I like solving them—optimizing complex systems, making them safer, finding patterns across domains.
+/* Mobile header + overlay (hidden by default, enabled in media query) */
+.mobile-header {
+  display: none;
+}
 
-**What got me here:**
-- Neural networks research → understanding how systems learn and fail
-- Automotive systems engineering → learning to optimize complex, interdependent systems
-- Investment banking and private equity → seeing how capital decisions get made under uncertainty
-- CEO roles (critical minerals recycling, advanced manufacturing) → solving problems at scale under constraints
-- MIT Applied AI (current) → diving deep into what's emerging in machine learning
+.mobile-overlay {
+  display: none;
+}
 
-I have patents in automotive acoustics and electric vehicle battery recycling. I've led through restructuring, raised capital, and built technical teams that shipped real products.
+/* Sidebar Styles */
+.sidebar {
+  width: 360px;            /* Wider sidebar so titles aren't squished */
+  background-color: transparent;
+  border-right: 1px solid #d8d8d8;
+  padding: 20px;
+  flex-shrink: 0;
+}
 
-I've learned to see patterns others miss, and I genuinely enjoy solving problems at these intersections.
+.site-title a {
+  font-size: 24px;
+  font-weight: 400;
+  color: #333;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  display: block;
+}
 
-## Why Now?
+/* Sidebar Navigation */
+.sidebar-nav ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
 
-Three forces converge right now:
+.sidebar-nav li {
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ddd;
+}
 
-1. **AI Systems Are Opaque and Running Hot** — We don't fully understand neural network weight formation, yet we're deploying them in critical systems. Security researchers are only beginning to map the attack surface.
+.sidebar-nav a {
+  padding: 8px 10px;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  color: #555;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-left: 4px solid transparent;
+  position: relative;
+}
 
-2. **US Critical Minerals Are Scarce, and Competitors Know It** — Mining capacity is geopolitically controlled. Battery demand is accelerating exponentially. Supply chain timing is misaligned with deployment timelines. This isn't abstract: it's a hardware constraint.
+/* Active Link Styling */
+.sidebar-nav li.active a {
+  background-color: #e9dfd3;
+  font-weight: 600;
+  color: #333;
+  border-left: 4px solid #b8a898;
+}
 
-3. **Leadership in Deep Tech Requires Integration** — The companies that win won't be purely technical or purely operational. They'll be led by people who understand silicon, supply chains, capital, and can communicate vision when the path is unclear.
+.sidebar-nav li.active a::after {
+  content: '→';
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+  color: #b8a898;
+}
 
-This is defensibility: not just better technology, but resilience across all three dimensions.
+/* Hover Effect */
+.sidebar-nav a:hover {
+  background-color: #d1c7a1;
+  color: #333;
+  cursor: pointer;
+}
 
-## What I'm Thinking About
+/* Main Content Styles */
+.site-content {
+  flex: 1;
+  padding: 10px 20px 40px 40px;
+  background-color: transparent;
+  box-shadow: none;
+  max-width: 900px;
+  border-left: 1px solid #e0dfd4;
+}
 
-- How neural networks fail under adversarial inputs, and why automotive security models don't account for it
-- Why vertical integration of critical minerals is the only real defensibility strategy
-- How to evaluate deep tech companies when surface metrics mislead
-- What separates companies that scale from those that fail
-- The gap between technical excellence and business reality—and how leaders bridge it
+/* Page / Post Titles */
+.page-title,
+.post-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #333;
+  margin-bottom: 24px;
+}
 
-If you're thinking about these problems—as a founder, investor, operator, or researcher—🤝 [let's talk](https://www.linkedin.com/in/belmanco).
+/* Page content */
+.page-content {
+  background-color: transparent;
+  font-size: 18px;
+  max-width: 800px;
+}
+
+.page-content p {
+  margin: 0 0 1.3em; /* improved spacing */
+}
+
+/* Post body */
+.post-content {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.post-content p {
+  margin: 0 0 1.3em;  /* Proper spacing between paragraphs */
+}
+
+.post-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Headings inside articles */
+.site-content h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+.site-content h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 32px 0 12px;
+}
+
+.site-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 24px 0 10px;
+}
+
+/* Lists */
+.site-content ul,
+.site-content ol {
+  margin: 0 0 18px 1.4rem;
+  padding-left: 0;
+}
+
+.site-content ul {
+  list-style: disc;
+}
+
+.site-content ol {
+  list-style: decimal;
+}
+
+.site-content li {
+  margin-bottom: 6px;
+}
+
+/* Blockquotes */
+.site-content blockquote {
+  border-left: 3px solid #d1c7a1;
+  padding-left: 16px;
+  margin: 20px 0;
+  font-style: italic;
+  color: #555;
+}
+
+/* Inline code */
+.site-content code {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.95em;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* -----------------------------------------------------
+   MOBILE RESPONSIVE: Hamburger + Slide-out Sidebar
+------------------------------------------------------ */
+@media (max-width: 900px) {
+
+  /* MOBILE HEADER */
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-bottom: 1px solid #d8d8d8;
+    background: #f9f7ec;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+  }
+
+  .mobile-header .mobile-title a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .mobile-menu-toggle {
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  /* LAYOUT STACKS */
+  .layout {
+    flex-direction: column;
+    padding: 0 16px 24px 16px;
+    margin: 16px auto;
+  }
+
+  /* SIDEBAR AS SLIDE-OUT DRAWER */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 260px;
+    max-width: 80%;
+    padding: 20px;
+    background: #f9f7ec;
+    border-right: 1px solid #d8d8d8;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease-out;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* DARK OVERLAY FOR DRAWER */
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 800;
+  }
+
+  .mobile-overlay.visible {
+    display: block;
+  }
+
+  body.sidebar-open {
+    overflow: hidden;
+  }
+
+  /* MAIN CONTENT MOBILE FIX */
+  .site-content {
+    border-left: none;
+    padding: 20px 0 40px 0;
+    max-width: 100%;
+  }
+
+  .sidebar-nav a {
+    border-bottom: none;
+  }
+}
