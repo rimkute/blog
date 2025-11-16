@@ -11,7 +11,7 @@ That work contains seeds of insights now playing out at massive scale two decade
 
 ### The Technical Approach
 
-We processed SISO (Single Input Single Output) microphone signals using FFT (Fast Fourier Transform) analysis on unwrapped phase data to extract Time Difference of Arrival (TDOA) information. A Matched Filter Array (MFA) pipeline applied coherence filtering to clean noisy phase plots. Neural networks then learned patterns in residual errors to identify and localize faulty microphones.
+I processed SISO (Single Input Single Output) microphone signals using FFT (Fast Fourier Transform) analysis on unwrapped phase data to extract Time Difference of Arrival (TDOA) information. A Matched Filter Array (MFA) pipeline applied coherence filtering to clean noisy phase plots. Neural networks then learned patterns in residual errors to identify and localize faulty microphones.
 
 **The core finding**: Neural networks didn't just detect faults—they localized them, learning that measurement corruption has statistical signatures without being programmed to look for specific fault types.
 
