@@ -47,8 +47,9 @@
 
         <!-- MAIN CONTENT -->
         <main class="site-content">
+{% comment %}
           <h2 class="page-title">{{ page.title }}</h2>
-
+{% endcomment %}
           {% if page.featured_image %}
             <div class="post-hero">
               <img src="{{ page.featured_image | relative_url }}"
