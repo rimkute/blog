@@ -61,7 +61,13 @@ This diversity in approach caught genuine failures in practice.
 Consider the following example: Low-frequency reflections could create a false coherence peak approximately 30 degrees away from the true source location. The physics layer flagged this situation as ambiguous due to the presence of multipath propagation. The signal processing filters suppressed it because the false peak was less stable than the true signal. However, a neural network trained independently on similar data would confidently identify the false peak. The network had learned to exploit this pattern in the training data. The three-layer architecture detected this internal contradiction between the different components. Rather than reporting the incorrect answer, the system triggered re-measurement to resolve the ambiguity.
 
 Without this architectural diversity, the incorrect answer would have propagated downstream without detection.
-![Homogeneous vs heterogeneous diagram](assets/homo_hetro.png)
+
+<img
+  src="{{ '/assets/homo_hetro.png' | relative_url }}"
+  alt="Homogeneous vs heterogeneous failures"
+  style="max-width: 420px; width: 100%; display: block; margin: 1.5rem auto;"
+>
+
 **Application to modern systems:**
 
 Combine different types of neural network architectures. Convolutional Neural Networks excel at detecting local spatial patterns. Transformer architectures excel at capturing long-range dependencies. Classical object detectors work well for known object categories. These different approaches fail in different ways on different inputs.
