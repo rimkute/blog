@@ -65,7 +65,7 @@ Without this architectural diversity, the incorrect answer would have propagated
 <img
   src="{{ '/assets/homo_hetro.png' | relative_url }}"
   alt="Homogeneous vs heterogeneous failures"
-  style="max-width: 420px; width: 100%; display: block; margin: 1.5rem auto;"
+  style="max-width: 360px; width: 100%; display: block; margin: 1.5rem auto;"
 >
 
 **Application to modern systems:**
