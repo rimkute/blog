@@ -140,8 +140,6 @@ Build systems anticipating failure modes and designing responses to them. Do not
 
 The systems that prove most resilient in real-world deployment are not necessarily those with the largest neural networks or the most sophisticated architectures. Rather, the most resilient systems are those that understand the boundaries of their knowledge, implement defenses against foreseeable failure modes, and maintain appropriate human involvement in critical decisions.
 
-
-
 ---
 **Technical references:**
 - Bhatt, T. K., Darvennes, C. M., and Ossanya, E. ["Acoustic Source Location Using a Neural Network"](https://pubs.aip.org/asa/jasa/article/101/5_Supplement/3057/562137/Acoustic-source-location-using-a-neural-network) *Journal of the Acoustical Society of America*, Vol. 101, pp. 3057, 1997.
