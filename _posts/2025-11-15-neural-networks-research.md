@@ -139,8 +139,8 @@ The systems that prove most resilient in real-world deployment are not necessari
 
 ---
 **Technical references:**
+- Beye & Kim, "Interpretable Machine Learning", 2019.
+- Goodfellow et al., "Explaining and Harnessing Adversarial Examples", 2014.
+- Bhatt, T. K. "Acoustic Source Location in a Noisy Environment Using a Microphone Array." Tennessee Technological University, 1999.
 - Bhatt, T. K., Darvennes, C. M., and Ossanya, E. ["Acoustic Source Location Using a Neural Network"](https://pubs.aip.org/asa/jasa/article/101/5_Supplement/3057/562137/Acoustic-source-location-using-a-neural-network) *Journal of the Acoustical Society of America*, Vol. 101, pp. 3057, 1997.
 - Bhatt, T. K., Darvennes, C. M., and Houghton, J. R. ["Feasibility of Using Imperfect Microphone Arrays in Noise Source Location"](https://pubs.aip.org/asa/jasa/article/103/5_Supplement/2897/559655/Feasibility-of-using-imperfect-microphone-arrays) *Proceedings of the International Congress on Acoustics and Acoustical Society of America*, Vol. II, pp. 13/17-13/18, Seattle, WA, 1998.
-- Bhatt, T. K. "Acoustic Source Location in a Noisy Environment Using a Microphone Array." Tennessee Technological University, 1999.
-- Goodfellow et al., "Explaining and Harnessing Adversarial Examples", 2014.
-- Beye & Kim, "Interpretable Machine Learning", 2019.
