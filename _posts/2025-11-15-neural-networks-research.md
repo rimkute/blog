@@ -18,7 +18,6 @@ In the early 2000s, I built an acoustic localization system. The objective was s
 The problem presented significant challenges. Sound waves reflected off walls. Ambient noise was ubiquitous. The signals of interest were small and obscured by background clutter. If the system produced incorrect results, months of data collection would be wasted. Therefore, the system required reliable operation under realistic conditions.
 
 The system architecture consisted of the following stages:
-
 1. Record signals from all microphone channels simultaneously.
 2. Calculate time-of-arrival using phase information and the Fast Fourier Transform, leveraging the known microphone geometry.
 3. Filter out reflections and noise based on coherence measures, since true sources exhibit consistent phase relationships while reflections and noise do not.
