@@ -61,13 +61,11 @@ This diversity in approach caught genuine failures in practice.
 Consider the following example: Low-frequency reflections could create a false coherence peak approximately 30 degrees away from the true source location. The physics layer flagged this situation as ambiguous due to the presence of multipath propagation. The signal processing filters suppressed it because the false peak was less stable than the true signal. However, a neural network trained independently on similar data would confidently identify the false peak. The network had learned to exploit this pattern in the training data. The three-layer architecture detected this internal contradiction between the different components. Rather than reporting the incorrect answer, the system triggered re-measurement to resolve the ambiguity.
 
 Without this architectural diversity, the incorrect answer would have propagated downstream without detection.
-
 <p align="center">
   <img src="/assets/homo_hetro.png"
        alt="Homogeneous vs heterogeneous failures"
        style="max-width:400px; width:100%; height:auto;">
 </p>
-
 **Application to modern systems:**
 
 Combine different types of neural network architectures. Convolutional Neural Networks excel at detecting local spatial patterns. Transformer architectures excel at capturing long-range dependencies. Classical object detectors work well for known object categories. These different approaches fail in different ways on different inputs.
@@ -141,7 +139,6 @@ The fundamental approach is straightforward to state: Apply structure where the 
 Build systems anticipating failure modes and designing responses to them. Do not focus exclusively on optimal performance in idealized scenarios. Maintain human oversight and control until the problem domain reaches a maturity level where full automation is justified.
 
 The systems that prove most resilient in real-world deployment are not necessarily those with the largest neural networks or the most sophisticated architectures. Rather, the most resilient systems are those that understand the boundaries of their knowledge, implement defenses against foreseeable failure modes, and maintain appropriate human involvement in critical decisions.
-
 
 ---
 
