@@ -39,7 +39,6 @@ Vision systems encounter millions of distinct scenes under varying conditions. L
 This reality leads to an important conclusion: robustness is not achieved through exhaustive testing. Rather, robustness requires continuous adaptation and real-time monitoring.
 
 **Implementation considerations:**
-
 Monitor the input distribution during production operation. Do not simply run the model on a test set once and conclude that validation is complete. Track statistical properties of the inputs: image quality, distribution characteristics, and confidence levels. When the world changes, the system should detect this change.
 
 Establish fallback mechanisms. When the system encounters high uncertainty, it should fail safely. The system may either decline to make a prediction and escalate to human review, or employ a simpler baseline method. Explicitly acknowledging uncertainty ("I do not know") is a valid system output.
@@ -66,8 +65,8 @@ Without this architectural diversity, the incorrect answer would have propagated
        alt="Homogeneous vs heterogeneous failures"
        style="max-width:400px; width:100%; height:auto;">
 </p>
-**Application to modern systems:**
 
+**Application to modern systems:**
 Combine different types of neural network architectures. Convolutional Neural Networks excel at detecting local spatial patterns. Transformer architectures excel at capturing long-range dependencies. Classical object detectors work well for known object categories. These different approaches fail in different ways on different inputs.
 
 Do not rely entirely on neural networks for decision-making. Retain physics-based models, rule-based systems, and safety interlocks. Employ neural networks to refine or correct decisions, not to make all decisions from scratch.
@@ -91,7 +90,6 @@ Contemporary machine learning practice often neglects these structural considera
 The history of sequence modeling demonstrates this principle well. Long Short-Term Memory networks dominated sequence modeling from the 1990s through the 2010s. These architectures were specifically designed to maintain information over long sequences by selectively remembering or forgetting previous inputs. However, Long Short-Term Memory architectures have been largely replaced by Transformer architectures in recent years. Transformers use attention mechanisms instead of recurrent connections. They can process sequences in parallel rather than sequentially, which is more efficient. More importantly, Transformers achieve better performance on many tasks because attention mechanisms more effectively capture long-range dependencies than the gating mechanisms of Long Short-Term Memory. This transition demonstrates how better architectural assumptions lead to superior results.
 
 **Practical implications:**
-
 Encode known invariances directly into the system architecture. If rotation, brightness changes, or noise should not affect the output, design the system to be inherently insensitive to these variations. Do not expect the learning process to discover these properties.
 
 Apply domain-specific preprocessing aggressively. Use domain knowledge to shape the input before the learning process begins. In acoustics, apply frequency analysis. In robotics, enforce physics constraints. In structured databases, extract entities and relationships explicitly.
