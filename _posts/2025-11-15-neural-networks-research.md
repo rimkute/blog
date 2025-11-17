@@ -140,7 +140,7 @@ Build systems anticipating failure modes and designing responses to them. Do not
 
 The systems that prove most resilient in real-world deployment are not necessarily those with the largest neural networks or the most sophisticated architectures. Rather, the most resilient systems are those that understand the boundaries of their knowledge, implement defenses against foreseeable failure modes, and maintain appropriate human involvement in critical decisions.
 
----
+
 
 **Technical references:**
 
