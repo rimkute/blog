@@ -65,7 +65,7 @@ Without this architectural diversity, the incorrect answer would have propagated
 <p align="center">
   <img src="/assets/homo_hetro.png"
        alt="Homogeneous vs heterogeneous failures"
-       style="max-width:360px; width:100%; height:auto;">
+       style="max-width:400px; width:100%; height:auto;">
 </p>
 
 **Application to modern systems:**
