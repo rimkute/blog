@@ -9,7 +9,7 @@ category: machine learning
 ---
 # Lessons on Robustness from Neural Networks Research
 
-Neural networks are now deployed in safety-critical systems, and yet we understand their failure modes far less than we understand their successes. This article examines a simple acoustic system from the early 2000s that operated reliably under difficult conditions. The lessons from that project remain applicable to modern artificial intelligence systems. The underlying problems have not changed. Only the scale and complexity have increased.
+Neural networks are now deployed in safety-critical systems, and yet we understand their failure modes far less than we understand their successes. This article examines an acoustic system from the early 2000s that operated reliably under difficult conditions. The lessons from that project remain applicable to modern artificial intelligence systems. The underlying problems have not changed. Only the scale and complexity have increased.
 
 ## Machine Learning for Acoustic Source Localization
 
