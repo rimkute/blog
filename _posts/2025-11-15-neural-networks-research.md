@@ -13,7 +13,7 @@ Neural networks are now deployed in safety-critical systems, and yet we understa
 
 ## Machine Learning for Acoustic Source Localization
 
-In the early 2000s, I built an acoustic localization system. The objective was straightforward: determine the location of a sound source in a room using an array of microphones.
+In the early 2000s, I built an acoustic localization system. The objective was straightforward: determine the location of a sound source in a room using an array of microphones and transducers.
 
 The problem presented significant challenges. Sound waves reflected off walls. Ambient noise was ubiquitous. The signals of interest were small and obscured by background clutter. If the system produced incorrect results, months of data collection would be wasted. Therefore, the system required reliable operation under realistic conditions.
 
