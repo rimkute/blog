@@ -62,11 +62,11 @@ Consider the following example: Low-frequency reflections could create a false c
 
 Without this architectural diversity, the incorrect answer would have propagated downstream without detection.
 
-<img
-  src="{{ '/assets/homo_hetro.png' | relative_url }}"
-  alt="Homogeneous vs heterogeneous failures"
-  style="max-width: 360px; width: 100%; display: block; margin: 1.5rem auto;"
->
+<p align="center">
+  <img src="/assets/homo_hetro.png"
+       alt="Homogeneous vs heterogeneous failures"
+       style="max-width:360px; width:100%; height:auto;">
+</p>
 
 **Application to modern systems:**
 
