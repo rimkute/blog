@@ -1,0 +1,3 @@
+# Allow all crawlers access, but block crawling of the 'misc' folder.
+User-agent: *
+Disallow: /misc/
