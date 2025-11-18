@@ -6,62 +6,85 @@
     <meta name="robots" content="noindex, nofollow">
     <title>Morocco Vacation Itinerary</title>
     <style>
+        /* Define a color palette based on the attached image */
+        :root {
+            --color-sky-dark: #1a237e; /* Deep blue from the night sky */
+            --color-desert-orange: #e76c00; /* Vibrant orange from the desert */
+            --color-desert-red: #c24b00; /* Deeper red-orange from highlights */
+            --color-building-light: #f7d28c; /* Light yellow from buildings */
+            --color-building-shadow: #a03c32; /* Terracotta/red from building shadows */
+            --color-snow-mountain: #e0e0e0; /* Light grey for snow caps */
+            --color-text: #333; /* Dark text for readability */
+            --color-background-light: #fdfdfd; /* Off-white for general background */
+            --color-day-break: #fffbe6; /* Very light yellow for day separation */
+            --color-header-bg: #f5f5f5; /* Light grey for table headers */
+        }
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--color-text);
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
+            background-color: var(--color-background-light);
         }
         h1 {
-            color: #0081c2;
+            color: var(--color-desert-orange); /* Vibrant orange for H1 */
             text-align: center;
-            border-bottom: 2px solid #0081c2;
+            border-bottom: 2px solid var(--color-desert-orange);
             padding-bottom: 10px;
         }
         .trip-graphic {
             width: 100%;
-            max-width: 700px; /* Adjust max-width as desired */
+            max-width: 700px;
             height: auto;
             display: block;
-            margin: 15px auto 30px; /* Center the image */
+            margin: 15px auto 30px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h2 {
-            background-color: #00a82d;
+            background-color: var(--color-sky-dark); /* Deep blue for H2 */
             color: white;
             padding: 10px;
             text-align: center;
             margin-top: 20px;
             margin-bottom: 0;
+            border-radius: 4px 4px 0 0;
         }
         h3 {
-            color: #333;
+            color: var(--color-text);
             margin-top: 0;
             padding: 6px 8px;
-            background-color: #eaeaea;
+            background-color: var(--color-header-bg);
         }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
+            background-color: white;
         }
         td, th {
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             padding: 10px;
             vertical-align: top;
         }
         .table-header-col {
             width: 15%;
-            background-color: #eaeaea;
+            background-color: var(--color-header-bg);
             font-weight: bold;
         }
         .itinerary-day {
             text-align: center;
             font-weight: bold;
             padding: 15px 0;
+        }
+        .itinerary-day-cell {
+            background-color: var(--color-day-break); /* Light yellow for day separation */
+            border-top: 2px solid var(--color-desert-red); /* Deeper red-orange line */
+            color: var(--color-desert-red); /* Day text in deeper red-orange */
+            font-size: 1.1em;
         }
         ul {
             list-style-type: disc;
@@ -74,20 +97,23 @@
         .reservation-details {
             margin-top: 10px;
             padding: 10px;
-            border: 1px solid #ddd;
-            background-color: #f9f9f9;
+            border: 1px solid #ffcc80; /* Light orange border */
+            background-color: #fff3e0; /* Very light orange background */
+            border-radius: 4px;
+        }
+        .reservation-details b {
+            color: var(--color-desert-red); /* Bold text in reservation details */
         }
         .map-note {
-            background-color: #fff3cd;
-            border: 1px solid #ffeeba;
-            color: #856404;
+            background-color: var(--color-building-light); /* Yellow from buildings */
+            border: 1px solid #fbdc9a; /* Slightly darker yellow border */
+            color: #856404; /* Darker text for contrast */
             padding: 10px;
             margin-top: 10px;
             border-radius: 4px;
         }
         .map-container {
             margin: 10px 0;
-            /* Border removed to make it clear this is a link placeholder */
         }
         .todo-list {
             list-style: none;
@@ -101,7 +127,13 @@
         .en-todo {
             margin-right: 8px;
             flex-shrink: 0;
-            margin-top: 3px; /* Align checkbox better with text */
+            margin-top: 3px;
+        }
+        a {
+            color: var(--color-desert-orange); /* Link color to match desert theme */
+        }
+        a:hover {
+            color: var(--color-desert-red); /* Hover color for links */
         }
     </style>
 </head>
@@ -143,7 +175,7 @@
     <table>
         <tbody>
             <tr>
-                <td colspan="3" class="itinerary-day"><b>Day 0: Thu, Dec 25, 2025</b></td>
+                <td colspan="3" class="itinerary-day itinerary-day-cell"><b>Day 0: Thu, Dec 25, 2025</b></td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -152,12 +184,12 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="itinerary-day"><b>Day 1 - Fri, Dec 26, 2025 • Arrive Marrakesh</b></td>
+                <td colspan="3" class="itinerary-day itinerary-day-cell"><b>Day 1 - Fri, Dec 26, 2025 • Arrive Marrakesh</b></td>
             </tr>
             <tr>
                 <td colspan="3">
                     <div>11:20 AM - Arrive Marrakesh Menara Airport (RAK)</div>
-                    <div>1:00 PM - Check-in at the hotel (!!send flight info and book transfer)</div>
+                    <div>1:00 PM - Check-in at the hotel</div>
                     <div>Activities ideas: Explore the Medina, Jemaa el-Fna Square</div>
                     <div class="reservation-details">
                         <b>Hotel: Hôtel & Ryads Barrière Le Naoura</b>
@@ -171,7 +203,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="itinerary-day"><b>Day 2 - Sat, Dec 27, 2025 • Marrakesh</b></td>
+                <td colspan="3" class="itinerary-day itinerary-day-cell"><b>Day 2 - Sat, Dec 27, 2025 • Marrakesh</b></td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -180,7 +212,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="itinerary-day"><b>Day 3- Sun, Dec 28, 2025 • Marrakesh</b></td>
+                <td colspan="3" class="itinerary-day itinerary-day-cell"><b>Day 3- Sun, Dec 28, 2025 • Marrakesh</b></td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -194,7 +226,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="itinerary-day"><b>Day 4 - Mon, Dec 29, 2025 • Marrakech → Draa Valley</b></td>
+                <td colspan="3" class="itinerary-day itinerary-day-cell"><b>Day 4 - Mon, Dec 29, 2025 • Marrakech → Draa Valley</b></td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -218,7 +250,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="itinerary-day"><b>Day 5 - Tue, Dec 30, 2025 • Draa Valley → Mhamid (Desert Gateway)</b></td>
+                <td colspan="3" class="itinerary-day itinerary-day-cell"><b>Day 5 - Tue, Dec 30, 2025 • Draa Valley → Mhamid (Desert Gateway)</b></td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -240,7 +272,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="itinerary-day"><b>Day 6 - Wed, Dec 31, 2025 • Erg Chigaga</b></td>
+                <td colspan="3" class="itinerary-day itinerary-day-cell"><b>Day 6 - Wed, Dec 31, 2025 • Erg Chigaga</b></td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -262,7 +294,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="itinerary-day"><b>Day 7 - Thu, Jan 1, 2026 • Desert → Marrakech</b></td>
+                <td colspan="3" class="itinerary-day itinerary-day-cell"><b>Day 7 - Thu, Jan 1, 2026 • Desert → Marrakech</b></td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -283,7 +315,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="itinerary-day"><b>Day 8 - Fri, Jan 2, 2026 • Marrakech → Agadir</b></td>
+                <td colspan="3" class="itinerary-day itinerary-day-cell"><b>Day 8 - Fri, Jan 2, 2026 • Marrakech → Agadir</b></td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -302,7 +334,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="itinerary-day"><b>Day 9 - Sat, Jan 3, 2026 • Agadir</b></td>
+                <td colspan="3" class="itinerary-day itinerary-day-cell"><b>Day 9 - Sat, Jan 3, 2026 • Agadir</b></td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -311,7 +343,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="itinerary-day"><b>Day 10: Sun, Jan 4, 2026 • Agadir</b></td>
+                <td colspan="3" class="itinerary-day itinerary-day-cell"><b>Day 10: Sun, Jan 4, 2026 • Agadir</b></td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -320,7 +352,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3" class="itinerary-day"><b>Day 11 - Monday, January 5, 2026 • Agadir → Marrakesh</b></td>
+                <td colspan="3" class="itinerary-day itinerary-day-cell"><b>Day 11 - Monday, January 5, 2026 • Agadir → Marrakesh</b></td>
             </tr>
             <tr>
                 <td colspan="3">
